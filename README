@@ -16,33 +16,33 @@ duplication, and well documented and tested code, with all memory leaks eliminat
 ------------------------------------------------------------------------------------------------------------------------------
  Task Name                     | Difficulty | Dependencies                      | Owner              | Due Date  | Status      
 ------------------------------------------------------------------------------------------------------------------------------
- 1. Implement                  | 1          | none                              | N/A                | N/A       | Not Started
+ 1. Implement                  | 0          | none                              | N/A                | N/A       | Not Started
  Bishop::legal_move_shape      
- 2. Implement Board:operator   | 1          | none                              | N/A                | N/A       | Not Started   
- 3. Implement Board::add_piece | 2          | none                              | N/A                | N/A       | Not Started     
- 4. Implement Board::display   | 3          | none                              | N/A                | N/A       | Not Started     
- 5. Implement Game::make_move  | 3          | none                              | N/A                | N/A       | Not Started
+ 2. Implement Board:operator   | 0          | none                              | N/A                | N/A       | Not Started   
+ 3. Implement Board::add_piece | 0          | none                              | N/A                | N/A       | Not Started     
+ 4. Implement Board::display   | 0          | none                              | N/A                | N/A       | Not Started     
+ 5. Implement Game::make_move  | 0          | none                              | N/A                | N/A       | Not Started
                                               
- 6. Implement Game::in_check   | 2          | none                              | N/A                | N/A       | Not Started 
+ 6. Implement Game::in_check   | 0          | none                              | N/A                | N/A       | Not Started 
                                                
- 7. Implement Game::in_mate    | 3          | none                              | N/A                | N/A       | Not Started
+ 7. Implement Game::in_mate    | 0          | none                              | N/A                | N/A       | Not Started
                                                 
- 8. Implement                  | 5          | none                              | N/A                | N/A       | Not Started 
+ 8. Implement                  | 0          | none                              | N/A                | N/A       | Not Started 
    Game::in_stalemate                                                                  
- 9. Implement                  | 3          | none                              | N/A                | N/A       | Not Started
+ 9. Implement                  | 0          | none                              | N/A                | N/A       | Not Started
     Game::point_value                                           
-10. Implement Game             | 4          | none                              | N/A                | N/A       | Not Started
+10. Implement Game             | 0          | none                              | N/A                | N/A       | Not Started
     operator>>                                           
-11. Implement                  | 3          | none                              | N/A                | N/A       | Not Started
+11. Implement                  | 0          | none                              | N/A                | N/A       | Not Started
     King::legal_move_shape                                          
-12. Implement                  | 3          | none                              | N/A                | N/A       | Not Started 
+12. Implement                  | 0          | none                              | N/A                | N/A       | Not Started 
     Knight::legal_move_shape                                          
-13. main.cpp try catch blocks  | 1          | none                              | N/A                | N/A       | Not Started
-14. Implement                  | 1          | none                              | N/A                | N/A       | Not Started
+13. main.cpp try catch blocks  | 0          | none                              | N/A                | N/A       | Not Started
+14. Implement                  | 0          | none                              | N/A                | N/A       | Not Started
    Pawn::legal_move_shape
-15. Implement                  | 1          | none                              | N/A                | N/A       | Not Started
+15. Implement                  | 0          | none                              | N/A                | N/A       | Not Started
     Pawn::legal_capture_shape
-16. Implement                  | 1          | none                              | N/A                | N/A       | Not Started
+16. Implement                  | 0          | none                              | N/A                | N/A       | Not Started
     Queen::legal_move_shape
-17. Implement                  | 1          | none                              | N/A                | N/A       | Not Started
+17. Implement                  | 0          | none                              | N/A                | N/A       | Not Started
     Rook::legal_move_shape
