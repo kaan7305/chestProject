@@ -8,32 +8,41 @@ April 16, 2025
 
 Overview of Project
 
-//TODO
+The goal of this project is to implement a version of the board game chess in C++. We will utilize 
+object-oriented design and proper application of the programming techniques learned throughout 
+the course. There will be careful attention to not just design, but also reducing code 
+duplication, and well documented and tested code, with all memory leaks eliminated.
 
 ------------------------------------------------------------------------------------------------------------------------------
  Task Name                     | Difficulty | Dependencies                      | Owner              | Due Date  | Status      
 ------------------------------------------------------------------------------------------------------------------------------
- 1. Implement Bishop::legal_move_shape          | 1          | none                              | dbasara1 keroltu1  | Mar 06    | Completed
- 2. Create Makefile            | 1          | none                              | keroltu1 dbasara1  | Mar 06    | Completed   
- 3. Implement make_image &     | 2          | none                              | dbasara1           | Mar 08    | Completed     
-    free_image
- 4. Implement write_ppm        | 3          | read_ppm for testing (provided)   | dbasara1           | Mar 08    | Completed     
- 5. Implement crop             | 3          | read_ppm, write_ppm, make_image,  | dbasara1           | Mar 11    | Completed
-                                              free_image 
- 6. Implement invert           | 2          | read_ppm, write_ppm, make_image,  | dbasara1           | Mar 11    | Completed 
-                                              free_image 
- 7. Implement binarize         | 3          | read_ppm, write_ppm, make_image,  | jibekwe1           | Mar 12    | Completed
-                                              free_image  
- 8. Implement blur             | 5          | read_ppm, write_ppm, make_image,  | keroltu1 jibekwe1  | Mar 13    | Completed 
-                                              free_image,                       
- 9. Implement zoom_out         | 3          | read_ppm, write_ppm, make_image,  | keroltu1           | Mar 17    | Completed
-                                              free_image 
-10. Implement pointilism       | 4          | read_ppm, write_ppm, make_image,  | keroltu1           | Mar 19    | Completed
-                                              free_image, srand/rand (function  
-                                              in C library)          
-11. Implement main method      | 3          | all methods written prior         | jibekwe1           | Mar 20    | Completed
-                                              (crop, invert, binarize, blur      
-                                              zoom_out, pointilism, plus error  
-                                              checks)
-12. Testing and Error Handling | 3          | all code (make sure correct  I/O  | dbasara1 keroltu1  | Mar 23    | Completed 
-                                              and valgrind clean)                 jibekwe1 
+ 1. Implement                  | 1          | none                              | N/A                | N/A       | Not Started
+ Bishop::legal_move_shape      
+ 2. Implement Board:operator   | 1          | none                              | N/A                | N/A       | Not Started   
+ 3. Implement Board::add_piece | 2          | none                              | N/A                | N/A       | Not Started     
+ 4. Implement Board::display   | 3          | none                              | N/A                | N/A       | Not Started     
+ 5. Implement Game::make_move  | 3          | none                              | N/A                | N/A       | Not Started
+                                              
+ 6. Implement Game::in_check   | 2          | none                              | N/A                | N/A       | Not Started 
+                                               
+ 7. Implement Game::in_mate    | 3          | none                              | N/A                | N/A       | Not Started
+                                                
+ 8. Implement                  | 5          | none                              | N/A                | N/A       | Not Started 
+   Game::in_stalemate                                                                  
+ 9. Implement                  | 3          | none                              | N/A                | N/A       | Not Started
+    Game::point_value                                           
+10. Implement Game             | 4          | none                              | N/A                | N/A       | Not Started
+    operator>>                                           
+11. Implement                  | 3          | none                              | N/A                | N/A       | Not Started
+    King::legal_move_shape                                          
+12. Implement                  | 3          | none                              | N/A                | N/A       | Not Started 
+    Knight::legal_move_shape                                          
+13. main.cpp try catch blocks  | 1          | none                              | N/A                | N/A       | Not Started
+14. Implement                  | 1          | none                              | N/A                | N/A       | Not Started
+   Pawn::legal_move_shape
+15. Implement                  | 1          | none                              | N/A                | N/A       | Not Started
+    Pawn::legal_capture_shape
+16. Implement                  | 1          | none                              | N/A                | N/A       | Not Started
+    Queen::legal_move_shape
+17. Implement                  | 1          | none                              | N/A                | N/A       | Not Started
+    Rook::legal_move_shape
