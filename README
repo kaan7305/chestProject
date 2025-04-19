@@ -21,23 +21,23 @@ duplication, and well documented and tested code, with all memory leaks eliminat
  2. Implement Board:operator   | 3          | none                              | Kaan Eroltu                | 22nd       | Not Started   
  3. Implement Board::add_piece | 3          | none                              | Johnathan Njau                | 23rd       | Not Started     
  4. Implement Board::display   | 2          | none                              | Desen Basaran                | 23rd       | Not Started     
- 5. Implement Game::make_move  | 5          | none                              | Kaan Eroltu                | 24th      | Not Started
+ 5. Implement Game::make_move  | 5          | Tasks 1, 11, 12, 14–17, 2, 3      | Kaan Eroltu                | 24th      | Not Started
                                               
- 6. Implement Game::in_check   | 4          | none                              | Johnathan Njau                | 24th       | Not Started 
+ 6. Implement Game::in_check   | 4          | Task 5                            | Johnathan Njau                | 24th       | Not Started 
                                                
- 7. Implement Game::in_mate    | 4          | none                              | Desen Basaran               | 24th       | Not Started
+ 7. Implement Game::in_mate    | 4          | Task 5, 6                         | Desen Basaran               | 24th       | Not Started
                                                 
- 8. Implement                  | 3          | none                              | Kaan Eroltu                | 24th       | Not Started 
+ 8. Implement                  | 3          | Task 5, 6                         | Kaan Eroltu                | 24th       | Not Started 
    Game::in_stalemate                                                                  
- 9. Implement                  | 2          | none                              | Johnathan Njau                | 25th       | Not Started
+ 9. Implement                  | 2          | Tasks 3, 16, 17, 14, 12, 1, 11    | Johnathan Njau                | 25th       | Not Started
     Game::point_value                                           
-10. Implement Game             | 3          | none                              | Desen Basaran               | 25th       | Not Started
+10. Implement Game             | 3          | Task 3                            | Desen Basaran               | 25th       | Not Started
     operator>>                                           
 11. Implement                  | 1          | none                              | Kaan Eroltu                | 25th       | Not Started
     King::legal_move_shape                                          
 12. Implement                  | 1          | none                              | Johnathan Njau                | 26th       | Not Started 
     Knight::legal_move_shape                                          
-13. main.cpp try catch blocks  | 2          | none                              | Desen Basaran                | 26th       | Not Started
+13. main.cpp try catch blocks  | 2          | Task 5, 10                        | Desen Basaran                | 26th       | Not Started
 14. Implement                  | 3          | none                              | Kaan Eroltu                | 26th      | Not Started
    Pawn::legal_move_shape
 15. Implement                  | 2          | none                              | Johnathan Njau                | 27th       | Not Started
