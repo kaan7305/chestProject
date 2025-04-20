@@ -16,33 +16,22 @@ duplication, and well documented and tested code, with all memory leaks eliminat
 ------------------------------------------------------------------------------------------------------------------------------
  Task Name                     | Difficulty | Dependencies                      | Owner              | Due Date  | Status      
 ------------------------------------------------------------------------------------------------------------------------------
- 1. Implement                  | 2          | none                              | Desen Basaran                | 21st       | Not Started
- Bishop::legal_move_shape      
- 2. Implement Board:operator   | 3          | none                              | Kaan Eroltu                | 22nd       | Not Started   
- 3. Implement Board::add_piece | 3          | none                              | Johnathan Njau                | 23rd       | Not Started     
- 4. Implement Board::display   | 2          | none                              | Desen Basaran                | 23rd       | Not Started     
- 5. Implement Game::make_move  | 5          | Tasks 1, 11, 12, 14–17, 2, 3      | Kaan Eroltu                | 24th      | Not Started
-                                              
- 6. Implement Game::in_check   | 4          | Task 5                            | Johnathan Njau                | 24th       | Not Started 
-                                               
- 7. Implement Game::in_mate    | 4          | Task 5, 6                         | Desen Basaran               | 24th       | Not Started
-                                                
- 8. Implement                  | 3          | Task 5, 6                         | Kaan Eroltu                | 24th       | Not Started 
-   Game::in_stalemate                                                                  
- 9. Implement                  | 2          | Tasks 3, 16, 17, 14, 12, 1, 11    | Johnathan Njau                | 25th       | Not Started
-    Game::point_value                                           
-10. Implement Game             | 3          | Task 3                            | Desen Basaran               | 25th       | Not Started
-    operator>>                                           
-11. Implement                  | 1          | none                              | Kaan Eroltu                | 25th       | Not Started
-    King::legal_move_shape                                          
-12. Implement                  | 1          | none                              | Johnathan Njau                | 26th       | Not Started 
-    Knight::legal_move_shape                                          
-13. main.cpp try catch blocks  | 2          | Task 5, 10                        | Desen Basaran                | 26th       | Not Started
-14. Implement                  | 3          | none                              | Kaan Eroltu                | 26th      | Not Started
-   Pawn::legal_move_shape
-15. Implement                  | 2          | none                              | Johnathan Njau                | 27th       | Not Started
-    Pawn::legal_capture_shape
-16. Implement                  | 2          | none                              | Desen Basaran                | 27th       | Not Started
-    Queen::legal_move_shape
-17. Implement                  | 2          | none                              | Kaan Eroltu                | 28th       | Not Started
-    Rook::legal_move_shape
+ 1. Implement README and UML   | 1          | none                              | Desen Basaran      | 4/20      | Completed
+ 2. Implement Pawn             | 3          | none                              | Desen Basaran      | 4/21      | Not Started
+ 3. Implement Knight           | 2          | none                              | Desen Basaran      | 4/21      | Not Started
+ 4. Implement Bishop           | 2          | none                              | Desen Basaran      | 4/21      | Not Started
+ 5. Implement Rook             | 2          | none                              | Desen Basaran      | 4/22      | Not Started
+ 6. Implement Queen            | 2          | none                              | Desen Basaran      | 4/22      | Not Started
+ 7. Implement King             | 2          | none                              | Desen Basaran      | 4/22      | Not Started
+ 8. Implement Board Operator   | 3          | Tasks 2-7                         | Johnathan Njau     | 4/23      | Not Started
+ 9. Implement Board Add Piece  | 3          | Tasks 2-7                         | Johnathan Njau     | 4/23      | Not Started
+10. Implement Board Display    | 2          | Tasks 2-7                         | Johnathan Njau     | 4/23      | Not Started
+11. Implement Game Make Move   | 3          | Tasks 2-10                        | Johnathan Njau     | 4/24      | Not Started
+12. Implement Game In Check    | 4          | Tasks 2-10                        | Johnathan Njau     | 4/24      | Not Started
+13. Implement Game In Mate     | 5          | Tasks 2-10                        | Kaan Eroltu        | 4/25      | Not Started                                          
+14. Implement Game In          | 4          | Tasks 2-10                        | Kaan Eroltu        | 4/25      | Not Started
+    Stalemate
+15. Implement Game Point Value | 3          | Tasks 2-10                        | Kaan Eroltu        | 4/26      | Not Started
+16. Implement Game >> operator | 4          | Tasks 2-10                        | Kaan Eroltu        | 4/26      | Not Started
+17. Implement Main Exceptions  | 2          | All Classes                       | All                | 4/27      | Not Started
+18. Testing                    | 3          | All Classes                       | All                | 4/28      | Not Started
