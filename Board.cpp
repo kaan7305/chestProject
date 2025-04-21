@@ -26,7 +26,10 @@ namespace Chess
     /////////////////////////
     // [REPLACE THIS STUB] //
     /////////////////////////
-    occ[position] = create_piece(piece_designator);
+    Piece* piece = create_piece(piece_designator);
+    // Sets the board pointer within the Piece for move checks
+    piece->setBoard(this);
+    occ[position] = piece;
   }
 
   void Board::display() const {
@@ -74,12 +77,9 @@ namespace Chess
   }
 
      // TODO Self Helper Function
-     bool Board::isOccupied(const Position& pos)  {
+     bool Board::isOccupied(const Position& pos) const {
       // if it's not nullptr, a piece is there so return true
       return (*this)(pos) != nullptr;
     }
-
-    // TODO Self Helper Function
-    //bool Board::occupiedByEnemy();
 
 }
