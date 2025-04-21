@@ -17,7 +17,7 @@ duplication, and well documented and tested code, with all memory leaks eliminat
  Task Name                     | Difficulty | Dependencies                      | Owner              | Due Date  | Status      
 ------------------------------------------------------------------------------------------------------------------------------
  1. Implement README and UML   | 1          | none                              | Desen Basaran      | 4/20      | Completed
- 2. Implement Pawn             | 3          | none                              | Desen Basaran      | 4/21      | Not Started
+ 2. Implement Pawn             | 3          | none                              | Desen Basaran      | 4/21      | Completed
  3. Implement Knight           | 2          | none                              | Kaan Eroltu        | 4/21      | Not Started
  4. Implement Bishop           | 2          | none                              | Johnathan Njau     | 4/21      | Not Started
  5. Implement Rook             | 2          | none                              | Desen Basaran      | 4/22      | Not Started
