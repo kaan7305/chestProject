@@ -43,6 +43,13 @@ namespace Chess
 		// Returns true if the board has the right number of kings on it
 		bool has_valid_kings() const;
 
+		// TODO Self Added Function
+		bool isOccupied(const Position& pos);
+
+		// TODO Self Helper Function
+		bool occupiedByEnemy();
+
+
 	private:
 		// The sparse map storing the pieces, keyed off locations
 		std::map<Position, Piece*> occ;
