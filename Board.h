@@ -44,10 +44,7 @@ namespace Chess
 		bool has_valid_kings() const;
 
 		// TODO Self Added Function
-		bool isOccupied(const Position& pos);
-
-		// TODO Self Helper Function
-		bool occupiedByEnemy();
+		bool isOccupied(const Position& pos) const;
 
 
 	private:
