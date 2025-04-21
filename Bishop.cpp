@@ -5,6 +5,15 @@
 namespace Chess
 {
 
+  /**
+   * Class to check if the move shape is valid for a Bishop. Also checks if,
+   * if the move is a capture move, it's valid.
+   * @param start The starting position of the piece
+   * @param end The ending position of the piece
+   * @return true if the move shape is valid, false otherwise
+   * @note The move shape is valid if the piece moves diagonally and 
+   *       there are no pieces in the way
+   */
   bool Bishop::legal_move_shape(const Position& start, const Position& end) const {
 
     // Checks if the move shape is Diagnonal
