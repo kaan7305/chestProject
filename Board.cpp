@@ -21,7 +21,7 @@ namespace Chess
     /////////////////////////
     return NULL;
   }
-  
+
   void Board::add_piece(const Position& position, const char& piece_designator) {
     /////////////////////////
     // [REPLACE THIS STUB] //
@@ -72,4 +72,14 @@ namespace Chess
     }
     return os;
   }
+
+     // TODO Self Helper Function
+     bool Board::isOccupied(const Position& pos)  {
+      // if it's not nullptr, a piece is there so return true
+      return (*this)(pos) != nullptr;
+    }
+
+    // TODO Self Helper Function
+    //bool Board::occupiedByEnemy();
+
 }
