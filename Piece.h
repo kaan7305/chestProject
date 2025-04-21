@@ -12,6 +12,7 @@ namespace Chess
 {
   // define pair of characters as a new type to represent a position on the board
   typedef std::pair<char, char> Position;
+  class Board;
 
 	class Piece {
 
@@ -58,9 +59,18 @@ namespace Chess
 		//		Mystery:  U+2687  U+2689
         virtual std::string to_unicode() const = 0;
 
+		// Allows a piece to know what board it's on, without passing
+		// the board around everywhere.
+		void setBoard(const Board* b) { board = b; }
+
+
 	protected:
 		// When a piece is created, its color must be provided as an argument
 		Piece(bool is_white) : white(is_white){ }
+
+		// Board object for the setBoard function
+		const Board* board = nullptr;
+		
 
 	private:
 		// A boolean value indicating whether the piece is white or black
