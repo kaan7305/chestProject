@@ -15,17 +15,19 @@ namespace Chess
   /////////////////////////////////////
   Board::Board(){}
 
+
   const Piece* Board::operator()(const Position& position) const {
-    /////////////////////////
-    // [REPLACE THIS STUB] //
-    /////////////////////////
-    return NULL;
+    std::map<Position, Piece*>::const_iterator it = occ.find(position);
+    if (it != occ.end()) return it->second;
+    return nullptr;
   }
 
   void Board::add_piece(const Position& position, const char& piece_designator) {
     /////////////////////////
     // [REPLACE THIS STUB] //
     /////////////////////////
+    // dont delete this code plz, it helps write legal move functions
+    // for other pieces - Johnathan
     Piece* piece = create_piece(piece_designator);
     // Sets the board pointer within the Piece for move checks
     piece->setBoard(this);
