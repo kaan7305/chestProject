@@ -32,6 +32,7 @@ namespace Chess
     /////////////////////////
     // [REPLACE THIS STUB] //
     /////////////////////////
+    
     // dont delete this code plz, it helps write legal move functions
     // for other pieces - Johnathan
     Piece* piece = create_piece(piece_designator);
