@@ -26,6 +26,7 @@ namespace Chess
         if ( target && (this->is_white() != target->is_white()) ) {
           return true;
         }
+        return false;
       }
       return true;
     }
