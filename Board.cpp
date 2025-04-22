@@ -84,7 +84,11 @@ namespace Chess
     return os;
   }
 
-     // TODO Self Helper Function
+     /**
+      * Checks if the specified position is occupied by a piece.
+      * @param pos The position to check.
+      * @return True if the position is occupied, false otherwise.
+      */
      bool Board::isOccupied(const Position& pos) const {
       // if it's not nullptr, a piece is there so return true
       return (*this)(pos) != nullptr;
