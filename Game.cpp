@@ -1,4 +1,5 @@
 #include <cassert>
+#include <utility>
 #include "Game.h"
 
 namespace Chess
@@ -44,11 +45,13 @@ namespace Chess
 		/////////////////////////
 	}
 
+	/**
+	 * Checks if the king piece is in check.
+	 * @param white True if the king is white, false if black.
+	 * @return True if the king is in check, false otherwise.
+	 */
 	bool Game::in_check(const bool& white) const {
-		/////////////////////////
-		// [REPLACE THIS STUB] //
-		/////////////////////////
-		return false;
+		
 	}
 
 
