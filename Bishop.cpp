@@ -1,6 +1,6 @@
 #include "Bishop.h"
 #include "Board.h"
-#include <utility>
+//#include <utility>
 
 namespace Chess
 {
@@ -33,21 +33,17 @@ namespace Chess
       }
 
       // if it gets here, every other space was valid so check the last
-      if (board->isOccupied(Position(end.first, end.second))) { // checks if capture move
+      if (board->isOccupied(Position(end.first, end.second))) {
         const Piece* target = board->operator()(Position(end.first, end.second));
         // checks if target is an enemy
-        if ( target && ((this->is_white() && !(target->is_white()))
-          || (!(this->is_white())) && (target->is_white()))) {
+        if ( target && (this->is_white() != target->is_white()) ) {
           return true;
         }
         return false;
-
       }
-     
       return true;
     }
+
     return false;
   }
-
-
 }
