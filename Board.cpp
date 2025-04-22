@@ -15,7 +15,13 @@ namespace Chess
   /////////////////////////////////////
   Board::Board(){}
 
-
+  /**
+   * Returns a const pointer to the piece at a prescribed location if it exists,
+   * or nullptr if there is nothing there.
+   * @param position The position on the board to check for a piece.
+   * @return A const pointer to the piece at the specified position, or nullptr 
+   *         if no piece exists.
+   */
   const Piece* Board::operator()(const Position& position) const {
     std::map<Position, Piece*>::const_iterator it = occ.find(position);
     if (it != occ.end()) return it->second;
