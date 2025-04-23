@@ -25,7 +25,7 @@ duplication, and well documented and tested code, with all memory leaks eliminat
  7. Implement King             | 2          | none                              | Johnathan Njau     | 4/22      | Completed
  8. Implement Board Operator   | 3          | Tasks 2-7                         | Johnathan Njau     | 4/24      | Completed
  9. Implement Board Add Piece  | 3          | Tasks 2-7                         | Kaan Eroltu        | 4/24      | Not Started
-10. Implement Board Display    | 2          | Tasks 2-7                         | Desen Basaran      | 4/24      | Not Started
+10. Implement Board Display    | 2          | Tasks 2-7                         | Desen Basaran      | 4/24      | Completed
 11. Implement Game Make Move   | 3          | Tasks 2-10                        | Desen Basaran      | 4/25      | Not Started
 12. Implement Game In Check    | 4          | Tasks 2-10                        | Johnathan Njau     | 4/25      | Not Started
 13. Implement Game In Mate     | 5          | Tasks 2-10                        | Kaan Eroltu        | 4/25      | Not Started
