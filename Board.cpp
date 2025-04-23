@@ -45,6 +45,38 @@ namespace Chess
     /////////////////////////
     // [REPLACE THIS STUB] //
     /////////////////////////
+
+    std::cout << "  ABCDEFGH" << std::endl;
+    
+    for (char row = '8'; row >= '1'; row--) {
+      std::cout << row << ' ';
+      
+      for (char col = 'A'; col <= 'H'; col++) {
+        Position pos(col, row);
+        const Piece* piece = (*this)(pos);
+    
+        bool is_dark = ((row - '1') + (col - 'A')) % 2;
+        
+        Terminal::Color bg;
+        if (is_dark) {
+          bg = Terminal::BLACK; // black on white
+        } else {
+          bg = Terminal::WHITE; // white on black
+        }
+
+        if (piece) {
+          std::cout << piece->to_unicode();
+        } else {
+          std::cout << "-";
+        }
+  
+        Terminal::set_default(); // reset after each square
+      }  
+
+      std::cout << ' ' << row << std::endl;
+    }
+    
+    std::cout << "  ABCDEFGH" << std::endl;    
   }
 
   bool Board::has_valid_kings() const {
