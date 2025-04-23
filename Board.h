@@ -43,11 +43,8 @@ namespace Chess
 		// Returns true if the board has the right number of kings on it
 		bool has_valid_kings() const;
 
-		// TODO Self Added Function
-		bool isOccupied(const Position& pos);
-
-		// TODO Self Helper Function
-		bool occupiedByEnemy();
+		// returns true if that position is occupied by a piece
+		bool isOccupied(const Position& pos) const;
 
 
 	private:

@@ -15,18 +15,30 @@ namespace Chess
   /////////////////////////////////////
   Board::Board(){}
 
+  /**
+   * Returns a const pointer to the piece at a prescribed location if it exists,
+   * or nullptr if there is nothing there.
+   * @param position The position on the board to check for a piece.
+   * @return A const pointer to the piece at the specified position, or nullptr 
+   *         if no piece exists.
+   */
   const Piece* Board::operator()(const Position& position) const {
-    /////////////////////////
-    // [REPLACE THIS STUB] //
-    /////////////////////////
-    return NULL;
+    std::map<Position, Piece*>::const_iterator it = occ.find(position);
+    if (it != occ.end()) return it->second;
+    return nullptr;
   }
 
   void Board::add_piece(const Position& position, const char& piece_designator) {
     /////////////////////////
     // [REPLACE THIS STUB] //
     /////////////////////////
-    occ[position] = create_piece(piece_designator);
+    
+    // dont delete this code plz, it helps write legal move functions
+    // for other pieces - Johnathan
+    Piece* piece = create_piece(piece_designator);
+    // Sets the board pointer within the Piece for move checks
+    piece->setBoard(this);
+    occ[position] = piece;
   }
 
   void Board::display() const {
@@ -73,13 +85,14 @@ namespace Chess
     return os;
   }
 
-     // TODO Self Helper Function
-     bool Board::isOccupied(const Position& pos)  {
+     /**
+      * Checks if the specified position is occupied by a piece.
+      * @param pos The position to check.
+      * @return True if the position is occupied, false otherwise.
+      */
+     bool Board::isOccupied(const Position& pos) const {
       // if it's not nullptr, a piece is there so return true
       return (*this)(pos) != nullptr;
     }
-
-    // TODO Self Helper Function
-    //bool Board::occupiedByEnemy();
 
 }

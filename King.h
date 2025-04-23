@@ -15,7 +15,7 @@ namespace Chess
 		/////////////////////////////////////
 		char to_ascii() const override { return is_white() ? 'K' : 'k';	}
     
-    /////////////////////////////////////
+    	/////////////////////////////////////
 		// DO NOT MODIFY THIS FUNCTION!!!! //
 		/////////////////////////////////////
 		std::string to_unicode() const override { return is_white() ? "\u2654" : "\u265A"; }
