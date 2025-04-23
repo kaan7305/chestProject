@@ -44,7 +44,10 @@ namespace Chess
 		bool has_valid_kings() const;
 
 		// returns true if that position is occupied by a piece
-		bool isOccupied(const Position& pos) const;
+		bool isOccupied(const Position& pos) const;	
+
+		// returns true if king piece is in check
+		bool checkChecker (const bool& white) const;
 
 
 	private:
