@@ -127,4 +127,58 @@ namespace Chess
       return (*this)(pos) != nullptr;
     }
 
+    /**
+     * Checks if the king piece is in check.
+     * @param white True if the king is white, false if black.
+     * @return True if the king is in check, false otherwise.
+     * @note This helper function is in board because it requires
+     *       piece positions and logic, which board already has.
+     */
+    bool Board::checkChecker (const bool& white) const {
+      Position kingPos; // king's position
+      const Piece* p;
+      bool kingExists = false;
+
+      // find the king's location
+      for (std::map<Position, Piece*>::const_iterator it = occ.begin();
+          it != occ.end(); ++it ) {  
+          p = it->second;
+          if ( p && (p->to_ascii() == (white ? 'K' : 'k')) ) {
+            kingPos = it->first;
+            kingExists = true;
+            break; // got what we needed, loop no longer necessary
+          }
+      }
+
+      if (!kingExists) return false;
+        
+      // find if the king is in danger
+      for (std::map<Position, Piece*>::const_iterator it = occ.begin();
+          it != occ.end(); ++it ) {
+          p = it->second;
+          if (p && (p->is_white() != white) ) { // piece is an enemy
+            if (p->legal_capture_shape(it->first, kingPos)) return true;
+          }
+      }
+      return false;
+    }
+
+    /**
+     * Returns a vector of pairs containing the positions and pointers to pieces
+     * of the specified color.
+     * @param white True if the pieces are white, false if black.
+     * @return A vector of pairs containing the positions and pointers to pieces
+     *         of the specified color.
+     */
+    std::vector<std::pair<Position, const Piece*>> Board::piecesByColor (const bool& white) const {
+      std::vector<std::pair<Position, const Piece*>> result;
+      // collects all (avalible) pieces of the same color in one vector
+      for (std::map<Position, Piece*>::const_iterator it = occ.begin();
+          it != occ.end(); ++it ) {
+          if (it->second && (it->second->is_white() == white) ) {
+            result.push_back(std::make_pair(it->first, it->second));
+          }
+      }
+      return result;
+    }
 }

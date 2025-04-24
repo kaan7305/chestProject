@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <map>
+#include <vector>
 #include "Piece.h"
 #include "Pawn.h"
 #include "Rook.h"
@@ -49,6 +50,8 @@ namespace Chess
 		// returns true if king piece is in check
 		bool checkChecker (const bool& white) const;
 
+		// returns avalible pieces of that color
+		std::vector<std::pair<Position, const Piece*>> piecesByColor (const bool& white) const;
 
 	private:
 		// The sparse map storing the pieces, keyed off locations
