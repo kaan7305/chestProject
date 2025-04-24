@@ -51,7 +51,7 @@ namespace Chess
 	 * @return True if the king is in check, false otherwise.
 	 */
 	bool Game::in_check(const bool& white) const {
-		
+		return board.checkChecker(white);
 	}
 
 
@@ -62,12 +62,36 @@ namespace Chess
 		return false;
 	}
 
-
+	/**
+	 * Checks if the game is in stalemate.
+	 * @param white True if the king is white, false if black.
+	 * @return True if the game is in stalemate, false otherwise.
+	 */
 	bool Game::in_stalemate(const bool& white) const {
-		/////////////////////////
-		// [REPLACE THIS STUB] //
-		/////////////////////////
-		return false;
+		std::vector<std::pair<Position, const Piece*>> colorGroup =
+		board.piecesByColor(white);
+		const Piece* p;
+		Position start;
+		for (std::vector<std::pair<Position, const Piece*>>::const_iterator it =
+			colorGroup.begin(); it != colorGroup.end(); ++it) {
+			p = it->second;
+			start = it->first;
+			// run through all spots on the board
+			for (char x = 'A'; x <= 'H'; ++x) {
+				for (char y = '1'; y <= '8'; ++y) {
+					Position end(x, y);
+					// check if the moves would still be legal
+					if (p->legal_move_shape(start, end)) {
+						Game simulation = *this;
+						simulation.make_move(start, end);
+						// if after legal move, and not in check, that means
+						// there are valid moves left
+						if (!simulation.in_check(white)) return false;
+					}
+				}
+			}
+		}
+		return true; // no legal moves left because they would all result in a check
 	}
 
     // Return the total material point value of the designated player
