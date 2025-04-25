@@ -1,6 +1,7 @@
 #include <cassert>
 #include <utility>
 #include "Game.h"
+#include "Exceptions.h"
 
 namespace Chess
 {
@@ -157,6 +158,28 @@ namespace Chess
 		/////////////////////////
 		// [REPLACE THIS STUB] //
 		/////////////////////////
+		game.board = Board();
+
+		std::string line;
+		for (int rank = 8; rank >= 1; rank--) {
+			if (!std::getline(is, line) || line.size() < 8) {
+				throw Exception("invalid file format");
+			}
+
+			for (int file = 0; file < 8; file++) {
+				char piece_char = line[file];
+				if (piece_char != '-') {
+					Position pos (char ('A' + file), char ('1' + rank));
+				game.board.add_piece(pos, piece_char);
+				}
+			}
+		}
+
+		char turn_char;
+		if (!(is >> turn_char) || (turn_char != 'w' && turn_char != 'b')) {
+			throw Exception("invalid file format");
+		}
+
 		return is;
 	}
 
