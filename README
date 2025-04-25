@@ -28,8 +28,8 @@ duplication, and well documented and tested code, with all memory leaks eliminat
 10. Implement Board Display    | 2          | Tasks 2-7                         | Desen Basaran      | 4/24      | Completed
 11. Implement Game Make Move   | 3          | Tasks 2-10                        | Desen Basaran      | 4/25      | Completed
 12. Implement Game In Check    | 4          | Tasks 2-10                        | Johnathan Njau     | 4/25      | Completed
-13. Implement Game In Mate     | 5          | Tasks 2-10                        | Kaan Eroltu        | 4/25      | Not Started
-14. Implement Game In          | 4          | Tasks 2-10                        | Johnathan Njau     | 4/26      | Complete
+13. Implement Game In Mate     | 5          | Tasks 2-10                        | Kaan Eroltu        | 4/25      | Completed
+14. Implement Game In          | 4          | Tasks 2-10                        | Johnathan Njau     | 4/26      | Completed
     Stalemate
 15. Implement Game Point Value | 3          | Tasks 2-10                        | Kaan Eroltu        | 4/26      | Not Started
 16. Implement Game >> operator | 4          | Tasks 2-10                        | Desen Basaran      | 4/26      | Not Started
