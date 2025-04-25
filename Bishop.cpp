@@ -31,7 +31,7 @@ namespace Chess
         x += dx;
         y += dy;
       }
-
+      
       // if it gets here, every other space was valid so check the last
       if (board->isOccupied(Position(end.first, end.second))) {
         const Piece* target = board->operator()(Position(end.first, end.second));
