@@ -43,6 +43,40 @@ namespace Chess
 		/////////////////////////
 		// [REPLACE THIS STUB] //
 		/////////////////////////
+		if (start.first < 'A' || start.first > 'H' ||
+			start.second < '1' || start.second > '8')
+			throw Exception("start position is not on board");
+		if (end.first < 'A' || end.first > 'H' ||
+			end.second < '1' || end.second > '8')
+			throw Exception("end position is not on board");
+	
+		const Piece* mover = board(start);
+		if (!mover) throw Exception("no piece at start position");
+	
+		if (mover->is_white() != is_white_turn)
+			throw Exception("piece color and turn do not match");
+
+		bool destOcc = board.isOccupied(end);
+		if (destOcc) {
+			const Piece* victim = board(end);
+			if (victim->is_white() == mover->is_white())
+				throw Exception("cannot capture own piece");
+			if (!mover->legal_capture_shape(start,end))
+				throw Exception("illegal capture shape");
+		} else {
+			if (!mover->legal_move_shape(start,end))
+				throw Exception("illegal move shape");
+		}
+	
+		Game back = *this;
+
+		board.move_piece(start,end);
+		is_white_turn = !is_white_turn;
+	
+		if (board.checkChecker(!is_white_turn)) {
+			*this = back;
+			throw Exception("move exposes check");
+		}
 	}
 
 	/**
@@ -116,7 +150,6 @@ namespace Chess
 		/////////////////////////
 		// [REPLACE THIS STUB] //
 		/////////////////////////
-        return -1;
     }
 
 
