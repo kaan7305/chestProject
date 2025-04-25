@@ -1,7 +1,9 @@
 #include <fstream>
 #include <iostream>
+#include <ostream>
 #include <string>
 #include <cassert>
+#include "Exceptions.h"
 #include "Game.h"
 
 void show_commands() {
@@ -88,9 +90,16 @@ int main(int argc, char* argv[]) {
 				std::string argument;
 				std::cin >> argument;
 				std::ifstream ifs;
+			try {
 				ifs.open( argument );
+				if (!ifs.is_open()) throw Chess::Exception("Failed to open " + argument);
 				ifs >> game;
 				ifs.close();
+			}
+			catch (Chess::Exception& e) {
+				std::cerr << "ERROR " << e.what() << std::endl;
+				return -1;
+			}
 				// Check that the game is valid
 				assert(game.is_valid_game());
 				break;
@@ -117,8 +126,13 @@ int main(int argc, char* argv[]) {
 				// And make the move
 				} else {
           // TODO: add try catch blocks to recover from illegral moves
-					game.make_move(std::make_pair(argument[0], argument[1]),
-								   std::make_pair(argument[2], argument[3]));
+					try {
+						game.make_move(std::make_pair(argument[0], argument[1]),
+									std::make_pair(argument[2], argument[3]));
+					}
+					catch (Chess::Exception e) {
+						std::cerr << e.what() << std::endl;
+					}
 				}
 				break;
 			}
