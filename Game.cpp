@@ -54,12 +54,29 @@ namespace Chess
 		return board.checkChecker(white);
 	}
 
-
+	// true is checkmate false is not checkmate
 	bool Game::in_mate(const bool& white) const {
-		/////////////////////////
-		// [REPLACE THIS STUB] //
-		/////////////////////////
-		return false;
+
+		if (in_check(white) == false) 
+		{
+			return false;
+			}
+		// to gather all the pievces of color  by using vectors and pairs
+		std::vector<std::pair<Position, const Piece*>> colorGroup =
+		board.piecesByColor(white);
+		const Piece* p;
+
+		Position start;
+
+		for (std::vector<std::pair<Position, const Piece*>>::const_iterator it =
+			colorGroup.begin(); it != colorGroup.end(); ++it) 
+	{
+			p = it->second;
+			start = it->first;
+			}
+
+			// else, not a checkmate
+			return false;
 	}
 
 	/**
