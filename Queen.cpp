@@ -1,5 +1,6 @@
 #include "Queen.h"
 #include "Board.h"
+#include <cmath>
 
 namespace Chess
 {

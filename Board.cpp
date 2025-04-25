@@ -207,4 +207,21 @@ namespace Chess
       }
       return result;
     }
+
+    /**
+     * Moves a piece from one square to another (possibly capturing).
+     * @param from The position of the piece to move.
+     * @param to The position to move the piece to.
+     */
+    void Board::move_piece(const Position& from, const Position& to) {
+      // grabs and removes the pointer at "from"
+      Piece* p = occ[from];
+      occ.erase(from);
+  
+      // overwrites (captures if needed) at "to"
+      occ[to] = p;
+  
+      // makes sure the piece knows its board
+      p->setBoard(this);
+  }  
 }

@@ -53,6 +53,9 @@ namespace Chess
 		// returns avalible pieces of that color
 		std::vector<std::pair<Position, const Piece*>> piecesByColor (const bool& white) const;
 
+		// Moves a piece from one square to another (possibly capturing)
+		void move_piece(const Position& from, const Position& to);
+
 	private:
 		// The sparse map storing the pieces, keyed off locations
 		std::map<Position, Piece*> occ;
