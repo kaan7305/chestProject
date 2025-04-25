@@ -36,6 +36,32 @@ namespace Chess
     // dont delete this code plz, it helps write legal move functions
     // for other pieces - Johnathan
     Piece* piece = create_piece(piece_designator);
+
+    if (piece == nullptr)
+    {
+      throw Exception("Invalid  designator");
+    }
+
+    //  define pair of characters as a new type to represent a position on the board,
+    // I take this fropm Piece.h which us typedef std::pair<char, char> Position;
+    // .first refers to column, .second refers to row
+
+    char column =  position.first;
+    char row = position.second;
+    // check if the position is valid
+    if (column < 'A' || column > 'H' || row < '1' || row > '8') 
+    {
+      delete piece;
+      throw Exception("Invalid position");
+    }
+
+    // I am checking three different ways ti see there is no error also this will help me to understand
+    // isOcccupied function works properly 
+    if (occ.find(position) != occ.end() && occ[position] != nullptr && isOccupied(position)) 
+    {
+      delete piece;
+      throw Exception("Position is occupied");
+    }
     // Sets the board pointer within the Piece for move checks
     piece->setBoard(this);
     occ[position] = piece;
