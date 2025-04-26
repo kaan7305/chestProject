@@ -185,9 +185,11 @@ namespace Chess
 
     // Return the total material point value of the designated player
     int Game::point_value(const bool& white) const {
-		/////////////////////////
-		// [REPLACE THIS STUB] //
-		/////////////////////////
+
+		// we will have the total value of each piece
+		// then we have to get all the pieces from the given color
+		// we will sume all these by using a switch or if statemetn
+		
     }
 
 
