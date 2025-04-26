@@ -39,7 +39,7 @@ namespace Chess
 
     if (piece == nullptr)
     {
-      throw Exception("Invalid  designator");
+      throw Exception("invalid  designator");
     }
 
     //  define pair of characters as a new type to represent a position on the board,
@@ -52,15 +52,15 @@ namespace Chess
     if (column < 'A' || column > 'H' || row < '1' || row > '8') 
     {
       delete piece;
-      throw Exception("Invalid position");
+      throw Exception("invalid position");
     }
 
     // I am checking three different ways ti see there is no error also this will help me to understand
     // isOcccupied function works properly 
-    if (occ.find(position) != occ.end() && occ[position] != nullptr && isOccupied(position)) 
+    if (isOccupied(position)) 
     {
       delete piece;
-      throw Exception("Position is occupied");
+      throw Exception("position is occupied");
     }
     // Sets the board pointer within the Piece for move checks
     piece->setBoard(this);
