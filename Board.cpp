@@ -105,6 +105,17 @@ namespace Chess
     std::cout << "  ABCDEFGH" << std::endl;    
   }
 
+  void Board::occ_to_from(const Position& from, const Position& to)
+	{
+		occ[from] = occ[to];
+    occ.erase(from);
+	}
+
+	void Board::erase_piece(const Position& pos) 
+	{
+		occ.erase(pos);
+	}
+
   bool Board::has_valid_kings() const {
     int white_king_count = 0;
     int black_king_count = 0;
@@ -224,4 +235,6 @@ namespace Chess
       // makes sure the piece knows its board
       p->setBoard(this);
   }  
+
+
 }

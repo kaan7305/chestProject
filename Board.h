@@ -56,6 +56,9 @@ namespace Chess
 		// Moves a piece from one square to another (possibly capturing)
 		void move_piece(const Position& from, const Position& to);
 
+		void occ_to_from(const Position& from, const Position& to);
+		void erase_piece(const Position& pos);
+
 	private:
 		// The sparse map storing the pieces, keyed off locations
 		std::map<Position, Piece*> occ;

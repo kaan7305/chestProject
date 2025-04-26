@@ -90,6 +90,7 @@ namespace Chess
 	}
 
 	// true is checkmate false is not checkmate
+	// Havent finished yet
 	bool Game::in_mate(const bool& white) const {
 
 		if (in_check(white) == false) 
@@ -97,22 +98,58 @@ namespace Chess
 			return false;
 			}
 		// to gather all the pievces of color  by using vectors and pairs
-		std::vector<std::pair<Position, const Piece*>> colorGroup =
-		board.piecesByColor(white);
-		const Piece* p;
+		std::vector<std::pair<Position, const Piece*>> 
+		colorGroup = board.piecesByColor(white);
 
-		Position start;
+		// we will try to move each piece to each square on the board
+		// and check if the move is legal
+		for (std::vector<std::pair<Position, const Piece*>>::const_iterator cit =
+			colorGroup.begin(); cit != colorGroup.end(); ++cit) 
+		{
+			const Piece* p = cit->second;
+			Position start = cit->first;
 
-		for (std::vector<std::pair<Position, const Piece*>>::const_iterator it =
-			colorGroup.begin(); it != colorGroup.end(); ++it) 
-	{
-			p = it->second;
-			start = it->first;
+			for (char x = 'A'; x <= 'H'; x++) 
+			{
+				for (char y = '1'; y <= '8'; y++) 
+				{
+					Position to = std::make_pair(x, y);
+							
+					// we will decide which shape-checking function to use
+					bool occupied = board.isOccupied(to);
+					bool legalShape;
+					if(occupied)
+					{
+						legalShape = p->legal_capture_shape(start, to);
+					}
+					else 
+					{
+						legalShape = p->legal_move_shape(start, to);
+					}
+					if(legalShape == false)
+					{
+						continue;
+					}
+					Game simulation = *this;
+					simulation.is_white_turn = white;
+
+					simulation.board.erase_piece(to);
+					simulation.board.occ_to_from(start, to);
+					
+					// we will check if it is in check
+					if (simulation.in_check(white) == false) 
+					{
+						return false; // if it is not in check, then it is not checkmate
+					}
+
+				}
 			}
+		}
 
-			// else, not a checkmate
-			return false;
+		return true;
 	}
+
+
 
 	/**
 	 * Checks if the game is in stalemate.
