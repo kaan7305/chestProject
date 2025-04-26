@@ -1,4 +1,5 @@
 #include <cassert>
+#include <cstddef>
 #include <utility>
 #include "Game.h"
 #include "Exceptions.h"
@@ -189,6 +190,47 @@ namespace Chess
 		// we will have the total value of each piece
 		// then we have to get all the pieces from the given color
 		// we will sume all these by using a switch or if statemetn
+
+		std::vector<std::pair<Position, const Piece*>> 
+		pieces = board.piecesByColor(white);
+
+		int total = 0;
+		std::size_t size = 0;
+
+		while (size < pieces.size()) 
+		{
+			const Piece* piece = pieces[size].second;
+			char symbol = piece->to_ascii();
+			char upperCase = toupper(symbol);
+			switch (upperCase) 
+			{
+				case 'K':
+					total += 0;
+					break;
+				case 'Q':
+					total += 9;
+					break;
+				case 'R':
+					total += 5;
+					break;
+				case 'B':
+					total += 3;
+					break;
+				case 'N':
+					total += 3;
+					break;
+				case 'P':
+					total += 1;
+					break;
+				default:
+					break;
+			}
+
+			size++;
+
+		}
+
+		return total;
 		
     }
 
