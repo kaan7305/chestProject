@@ -26,7 +26,10 @@ namespace Chess
       // ensure there is no piece in the way of the path
       char x = start.first + dx; // add movement values
       char y = start.second + dy; 
-      while ((x != end.first) && (y != end.second)) {
+      while (x != end.first && y != end.second) {
+        if (x < 'a' || x > 'h' || y < '1' || y > '8') {
+          return false; // 🛡️ Prevent invalid Position creation
+        }
         if (board->isOccupied(Position(x, y))) return false;
         x += dx;
         y += dy;
