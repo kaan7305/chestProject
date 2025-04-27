@@ -10,22 +10,58 @@ namespace Chess
     // we will be returning true value otherwise we will be returning false
 
 
-  if (start.first == end.first || start.second == end.second ||
-    abs(start.first - end.first) == abs(start.second - end.second))
-  {
-    if ((board->isOccupied(Position(end.first,end.second)))) 
+    int dx = end.first  - start.first;
+    int dy = end.second - start.second;
+
+
+    if (dx != 0 && dy != 0 && std::abs(dx) != std::abs(dy))
     {
-      const Piece* target = board->operator()(Position(end.first, end.second));
-      // checks if target is an enemy
-      if (target && (this->is_white() != target->is_white())) 
-      {
-        return true;
-      }
       return false;
     }
-    return true;
-  }
+      
+    if (dx > 0)
+    {
+        dx = 1;
+    }
+    else if (dx < 0)
+    {
+        dx = -1;
+    }
+    else
+    {
+        dx = 0;
+    }
+    
+    if (dy > 0)
+    {
+        dy = 1;
+    }
+    else if (dy < 0)
+    {
+        dy = -1;
+    }
+    else
+    {
+        dy = 0;
+    }
 
-  return false;
+    char x = start.first + dx;
+    char y = start.second + dy;
+    
+    while (x != end.first || y != end.second) 
+    {
+      if (board->isOccupied(Position(x, y))){
+        return false;
+      } 
+      x += dx;
+      y += dy;
+    }
+  
+    if (board->isOccupied(end)) 
+    {
+      const Piece* target = board->operator()(end);
+      return target && (target->is_white() != this->is_white());
+    }
+    return true;
   }
 }
