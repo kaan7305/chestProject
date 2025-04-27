@@ -67,6 +67,8 @@ namespace Chess
 				throw Exception("illegal capture shape");
 		} else {
 			if (!mover->legal_move_shape(start,end))
+				throw Exception("illegal move shape");
+			if (!board.isPathClear(start,end))
 				throw Exception("path is not clear");
 		}
 	
