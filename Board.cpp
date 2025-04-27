@@ -15,6 +15,43 @@ namespace Chess
   /////////////////////////////////////
   Board::Board(){}
 
+  Board::~Board() {
+    for (auto &kv : occ) {
+      delete kv.second;
+    }
+    occ.clear();
+  }
+  
+  // Deep‐copy constructor
+  Board::Board(const Board& other) {
+    for (auto &kv : other.occ) {
+      char designator = kv.second->to_ascii();
+      Piece* newp = create_piece(designator);
+      newp->setBoard(this);
+      occ[kv.first] = newp;
+    }
+  }
+  
+  // Assignment operator
+  Board& Board::operator=(const Board& other) {
+    if (this != &other) {
+      // first, delete our existing pieces
+      for (auto &kv : occ) {
+        delete kv.second;
+      }
+      occ.clear();
+  
+      // then copy
+      for (auto &kv : other.occ) {
+        char designator = kv.second->to_ascii();
+        Piece* newp = create_piece(designator);
+        newp->setBoard(this);
+        occ[kv.first] = newp;
+      }
+    }
+    return *this;
+  }
+
   /**
    * Returns a const pointer to the piece at a prescribed location if it exists,
    * or nullptr if there is nothing there.

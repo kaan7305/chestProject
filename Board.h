@@ -13,6 +13,12 @@
 #include "King.h"
 #include "Mystery.h"
 
+struct PositionCompare {
+    bool operator()(const Chess::Position& a, const Chess::Position& b) const {
+        if (a.second == b.second) return a.first < b.first;
+        return a.second < b.second;
+    }
+};
 
 namespace Chess
 {
@@ -26,7 +32,9 @@ namespace Chess
 	public:
 		// Default constructor
 		Board();
-
+		~Board();                           // destructor
+    	Board(const Board& other);         // copy‐ctor
+    	Board& operator=(const Board& other); // assignment operator
 		// Returns a const pointer to the piece at a prescribed location if it exists,
 		// or nullptr if there is nothing there.
 		const Piece* operator() (const Position& position) const;
@@ -61,7 +69,7 @@ namespace Chess
 
 	private:
 		// The sparse map storing the pieces, keyed off locations
-		std::map<Position, Piece*> occ;
+		std::map<Position, Piece*, PositionCompare> occ;
 
         // Write the board state to an output stream
         friend std::ostream& operator<< (std::ostream& os, const Board& board);
