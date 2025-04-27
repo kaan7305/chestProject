@@ -67,6 +67,7 @@ namespace Chess
 		void occ_to_from(const Position& from, const Position& to);
 		void erase_piece(const Position& pos);
 		void fix_pieces_board();
+		bool isPathClear(const Position& start, const Position& end) const;
 
 	private:
 		// The sparse map storing the pieces, keyed off locations
