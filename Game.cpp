@@ -250,8 +250,8 @@ namespace Chess
 			for (int file = 0; file < 8; file++) {
 				char piece_char = line[file];
 				if (piece_char != '-') {
-					Position pos (char ('A' + file), char ('1' + rank));
-				game.board.add_piece(pos, piece_char);
+					Position pos (char ('A' + file), char ('0' + rank));
+					game.board.add_piece(pos, piece_char);
 				}
 			}
 		}
@@ -260,7 +260,7 @@ namespace Chess
 		if (!(is >> turn_char) || (turn_char != 'w' && turn_char != 'b')) {
 			throw Exception("invalid file format");
 		}
-
+		game.is_white_turn = (turn_char == 'w');
 		return is;
 	}
 
