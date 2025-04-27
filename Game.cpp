@@ -73,6 +73,17 @@ namespace Chess
 		Game back = *this;
 
 		board.move_piece(start,end);
+
+		const Piece* movedPiece = board(end);
+		
+		if (movedPiece) {
+			char pieceChar = movedPiece->to_ascii();
+			if ((pieceChar == 'P' && end.second == '8') || (pieceChar == 'p' && end.second == '1')) {
+				board.erase_piece(end);
+				board.add_piece(end, is_white_turn ? 'Q' : 'q');
+			}
+		}
+
 		is_white_turn = !is_white_turn;
 	
 		if (board.checkChecker(!is_white_turn)) {
