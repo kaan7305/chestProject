@@ -111,7 +111,7 @@ int main(int argc, char* argv[]) {
 									std::make_pair(argument[2], argument[3]));
 					}
 					catch (Chess::Exception& e) {
-						std::cerr << e.what() << std::endl;
+						std::cerr << "Could not make move: " << e.what() << std::endl;
 					}
 				}
 				break;

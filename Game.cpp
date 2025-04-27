@@ -67,7 +67,7 @@ namespace Chess
 				throw Exception("illegal capture shape");
 		} else {
 			if (!mover->legal_move_shape(start,end))
-				throw Exception("illegal move shape");
+				throw Exception("path is not clear");
 		}
 	
 		Game back = *this;
