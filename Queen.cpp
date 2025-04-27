@@ -9,8 +9,6 @@ namespace Chess
     // We will be checking if the move is horizontal, vertical, or diagonal and if it is so
     // we will be returning true value otherwise we will be returning false
 
-  int dx = abs(end.first - start.first);
-  int dy = abs(end.second - start.second);
 
   if (start.first == end.first || start.second == end.second ||
     abs(start.first - end.first) == abs(start.second - end.second))

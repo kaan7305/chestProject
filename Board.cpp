@@ -83,12 +83,8 @@ namespace Chess
     
         bool is_dark = ((row - '1') + (col - 'A')) % 2;
         
-        Terminal::Color bg;
-        if (is_dark) {
-          bg = Terminal::BLACK; // black on white
-        } else {
-          bg = Terminal::WHITE; // white on black
-        }
+        Terminal::Color bg = is_dark ? Terminal::BLACK : Terminal::WHITE;
+        Terminal::color_bg(bg);
 
         if (piece) {
           std::cout << piece->to_unicode();
