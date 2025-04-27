@@ -65,17 +65,16 @@ int main(int argc, char* argv[]) {
 			game_over = true;
 		}
 
-		// Get the next command
-		std::string choice;
-        //		std::pair<char, char> start , end;
+		std::string line;
 		std::cout << "Next command: ";
-		std::cin >> choice;
-
-		if(!(std::cin >> choice))
+		if (!std::getline(std::cin, line))
 		{
-			break;
-
+			break; // Exit cleanly if input file ends
 		}
+		std::string choice;
+		std::istringstream iss(line);
+		iss >> choice;
+	
 
 		// Validate that the command is a single character
 		if (choice.length() != 1) {
@@ -97,7 +96,7 @@ int main(int argc, char* argv[]) {
 				// Load a game from a file
         // exit the program with return code -1 if an exception is caught here
 				std::string argument;
-				std::cin >> argument;
+				iss >> argument;;
 				std::ifstream ifs;
 			try {
 				ifs.open( argument );
@@ -116,7 +115,7 @@ int main(int argc, char* argv[]) {
 			case 'S': case 's': {
 				// Write a game to a file
 				std::string argument;
-				std::cin >> argument;
+				iss >> argument;
 				std::ofstream ofs;
 				ofs.open( argument );
 				ofs << game;
@@ -126,7 +125,7 @@ int main(int argc, char* argv[]) {
 			case 'M': case 'm': {
 				// Make a move
 				std::string argument;
-				std::cin >> argument;
+				iss >> argument;
 				// Validate that the move is correctly specified
 				if (argument.length() != 4) {
 					std::cerr <<
