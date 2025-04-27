@@ -128,7 +128,7 @@ int main(int argc, char* argv[]) {
 						game.make_move(std::make_pair(argument[0], argument[1]),
 									std::make_pair(argument[2], argument[3]));
 					}
-					catch (Chess::Exception e) {
+					catch (Chess::Exception& e) {
 						std::cerr << e.what() << std::endl;
 					}
 				}
