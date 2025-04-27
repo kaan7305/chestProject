@@ -2,6 +2,7 @@
 #include <iostream>
 #include <ostream>
 #include <string>
+#include <sstream>
 #include <cassert>
 #include "Exceptions.h"
 #include "Game.h"
@@ -31,40 +32,6 @@ int main(int argc, char* argv[]) {
 
 	while(!game_over) {
 
-		// Display the board
-		game.display();
-
-		bool turnWhite = game.turn_white();
-
-		// Indicate whose turn it is
-		if (turnWhite) {
-			std::cout << "White's move." << std::endl;
-		} else {
-			std::cout << "Black's move." << std::endl;
-		}
-
-        // Indicate current player's material point value
-        std::cout << "Material point value: " << game.point_value(game.turn_white()) << std::endl;
-
-		bool isCheck = game.in_check(turnWhite);
-        bool isMate  = isCheck && game.in_mate(turnWhite);
-        bool isStale = !isMate && !isCheck && game.in_stalemate(turnWhite);
-
-		// If the board is in a check-mate state, end the game
-		if (isMate) {
-			std::cout << "Checkmate! Game over." << std::endl;
-			game_over = true;
-
-		// If the board is in a check state, notify the players
-     		} else if (isCheck) {
-			std::cout << "You are in check!" << std::endl;
-
-		// If the board is in a stalemate state, notify the players
-		} else if (isStale) {
-			std::cout << "Stalemate! Game over." << std::endl;
-			game_over = true;
-		}
-
 		std::string line;
 		std::cout << "Next command: ";
 		if (!std::getline(std::cin, line))
@@ -74,6 +41,12 @@ int main(int argc, char* argv[]) {
 		std::string choice;
 		std::istringstream iss(line);
 		iss >> choice;
+
+		if(choice.empty() || choice.length() != 1) 
+		{
+			break;
+
+		}
 	
 
 		// Validate that the command is a single character
@@ -146,6 +119,37 @@ int main(int argc, char* argv[]) {
 			default:
 				// Unrecognized command
 				std::cerr << "Invalid action '" << choice << "'" << std::endl;
+			}
+
+			if (!game_over) {
+				// Display the board
+				game.display();
+	
+				bool turnWhite = game.turn_white();
+				// Indicate whose turn it is
+				if (turnWhite) {
+					std::cout << "White's move." << std::endl;
+				} else {
+					std::cout << "Black's move." << std::endl;
+				}
+	
+				// Indicate current player's material point value
+				std::cout << "Material point value: "
+						  << game.point_value(turnWhite) << std::endl;
+	
+				bool isCheck = game.in_check(turnWhite);
+				bool isMate  = isCheck && game.in_mate(turnWhite);
+				bool isStale = !isMate && !isCheck && game.in_stalemate(turnWhite);
+	
+				if (isMate) {
+					std::cout << "Checkmate! Game over." << std::endl;
+					game_over = true;
+				} else if (isCheck) {
+					std::cout << "You are in check!" << std::endl;
+				} else if (isStale) {
+					std::cout << "Stalemate! Game over." << std::endl;
+					game_over = true;
+				}
 			}
 		}
 	}
