@@ -27,9 +27,10 @@ namespace Chess
       char x = start.first + dx; // add movement values
       char y = start.second + dy; 
       while (x != end.first && y != end.second) {
-        if (x < 'a' || x > 'h' || y < '1' || y > '8') {
-          return false; // 🛡️ Prevent invalid Position creation
-        }
+        // make sure we stay in A–H,1–8
+        if (x < 'A' || x > 'H' || y < '1' || y > '8') {
+        return false;
+      }
         if (board->isOccupied(Position(x, y))) return false;
         x += dx;
         y += dy;

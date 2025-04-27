@@ -120,7 +120,12 @@ namespace Chess
     
         bool is_dark = ((row - '1') + (col - 'A')) % 2;
         
-        Terminal::Color bg = is_dark ? Terminal::BLACK : Terminal::WHITE;
+        Terminal::Color bg;
+        if (is_dark) {
+            bg = Terminal::BLACK;
+        } else {
+            bg = Terminal::WHITE;
+        }
         Terminal::color_bg(bg);
 
         if (piece) {
@@ -267,7 +272,17 @@ namespace Chess
   
       // makes sure the piece knows its board
       p->setBoard(this);
-  }  
+    }  
 
+  /**
+   * Sets the board pointer within the Piece for move checks.
+   */
+    void Board::fix_pieces_board() {
+      for (auto& kv : occ) {
+          if (kv.second) {
+              kv.second->setBoard(this);
+          }
+      }
+  }
 
 }

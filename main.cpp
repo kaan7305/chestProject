@@ -34,31 +34,35 @@ int main(int argc, char* argv[]) {
 		// Display the board
 		game.display();
 
+		bool turnWhite = game.turn_white();
+
 		// Indicate whose turn it is
-		if (game.turn_white()) {
-			std::cout << "white move" << std::endl;
+		if (turnWhite) {
+			std::cout << "White's move." << std::endl;
 		} else {
-			std::cout << "black move" << std::endl;
+			std::cout << "Black's move." << std::endl;
 		}
 
         // Indicate current player's material point value
         std::cout << "Material point value: " << game.point_value(game.turn_white()) << std::endl;
 
+		bool isCheck = game.in_check(turnWhite);
+        bool isMate  = isCheck && game.in_mate(turnWhite);
+        bool isStale = !isMate && !isCheck && game.in_stalemate(turnWhite);
+
 		// If the board is in a check-mate state, end the game
-		if (game.in_mate(game.turn_white())) {
+		if (isMate) {
 			std::cout << "Checkmate! Game over." << std::endl;
 			game_over = true;
-			break;
 
 		// If the board is in a check state, notify the players
-     		} else if (game.in_check(game.turn_white())) {
+     		} else if (isCheck) {
 			std::cout << "You are in check!" << std::endl;
 
 		// If the board is in a stalemate state, notify the players
-		} else if (game.in_stalemate(game.turn_white())) {
+		} else if (isStale) {
 			std::cout << "Stalemate! Game over." << std::endl;
 			game_over = true;
-			break;
 		}
 
 		// Get the next command

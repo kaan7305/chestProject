@@ -92,64 +92,51 @@ namespace Chess
 
 	// true is checkmate false is not checkmate
 	// Havent finished yet
-	bool Game::in_mate(const bool& white) const {
-
-		if (in_check(white) == false) 
-		{
+	bool Game::in_mate(const bool& white) const {	
+		if (!in_check(white)) {
 			return false;
-			}
-		// to gather all the pievces of color  by using vectors and pairs
-		std::vector<std::pair<Position, const Piece*>> 
-		colorGroup = board.piecesByColor(white);
-
-		// we will try to move each piece to each square on the board
-		// and check if the move is legal
-		for (std::vector<std::pair<Position, const Piece*>>::const_iterator cit =
-			colorGroup.begin(); cit != colorGroup.end(); ++cit) 
-		{
-			const Piece* p = cit->second;
-			Position start = cit->first;
-
-			for (char x = 'A'; x <= 'H'; x++) 
-			{
-				for (char y = '1'; y <= '8'; y++) 
-				{
+		}
+		
+		std::vector<std::pair<Position, const Piece*>> colorGroup = board.piecesByColor(white);
+		const Piece* p;
+		Position start;
+	
+		for (std::vector<std::pair<Position, const Piece*>>::const_iterator cit = colorGroup.begin(); cit != colorGroup.end(); ++cit) {
+			p = cit->second;
+			start = cit->first;
+	
+			for (char x = 'A'; x <= 'H'; ++x) {
+				for (char y = '1'; y <= '8'; ++y) {
 					Position to = std::make_pair(x, y);
-							
-					// we will decide which shape-checking function to use
+	
 					bool occupied = board.isOccupied(to);
 					bool legalShape;
-					if(occupied)
-					{
+					if (occupied) {
 						legalShape = p->legal_capture_shape(start, to);
-					}
-					else 
-					{
+					} else {
 						legalShape = p->legal_move_shape(start, to);
 					}
-					if(legalShape == false)
-					{
+					if (!legalShape) {
 						continue;
 					}
-					Game simulation = *this;
-					simulation.is_white_turn = white;
-
-					simulation.board.erase_piece(to);
-					simulation.board.occ_to_from(start, to);
-					
-					// we will check if it is in check
-					if (simulation.in_check(white) == false) 
-					{
-						return false; // if it is not in check, then it is not checkmate
+		
+					Game simulation = *this;	
+					try {
+						simulation.make_move(start, to);
+					} catch (const Exception& e) {
+						continue;
 					}
-
+					if (!simulation.in_check(white)) {
+						return false;
+					}
 				}
 			}
+	
 		}
-
 		return true;
 	}
-
+	
+	
 
 
 	/**
@@ -157,32 +144,42 @@ namespace Chess
 	 * @param white True if the king is white, false if black.
 	 * @return True if the game is in stalemate, false otherwise.
 	 */
-	bool Game::in_stalemate(const bool& white) const {
-		std::vector<std::pair<Position, const Piece*>> colorGroup =
-		board.piecesByColor(white);
-		const Piece* p;
-		Position start;
-		for (std::vector<std::pair<Position, const Piece*>>::const_iterator it =
-			colorGroup.begin(); it != colorGroup.end(); ++it) {
-			p = it->second;
-			start = it->first;
-			// run through all spots on the board
-			for (char x = 'A'; x <= 'H'; ++x) {
-				for (char y = '1'; y <= '8'; ++y) {
-					Position end(x, y);
-					// check if the moves would still be legal
-					if (p->legal_move_shape(start, end)) {
-						Game simulation = *this;
-						simulation.make_move(start, end);
-						// if after legal move, and not in check, that means
-						// there are valid moves left
-						if (!simulation.in_check(white)) return false;
-					}
-				}
-			}
-		}
-		return true; // no legal moves left because they would all result in a check
-	}
+	 bool Game::in_stalemate(const bool& white) const {
+        std::vector<std::pair<Position, const Piece*>> colorGroup =
+        board.piecesByColor(white);
+        const Piece* p;
+        Position start;
+        for (std::vector<std::pair<Position, const Piece*>>::const_iterator it =
+            colorGroup.begin(); it != colorGroup.end(); ++it) {
+            p = it->second;
+            start = it->first;
+            // run through all spots on the board
+            for (char x = 'A'; x <= 'H'; ++x) {
+                for (char y = '1'; y <= '8'; ++y) {
+                    Position end(x, y);
+                    // check if the moves would still be legal
+                    if (p->legal_move_shape(start, end)) {
+                        Game simulation = *this;
+
+                        try {
+                            simulation.make_move(start, end);
+    
+                            // If move succeeds and no check, it's NOT stalemate
+                            if (!simulation.in_check(white)) {
+                                return false;
+                            }
+                        } 
+                        catch (const Exception& e) {
+                            // move exposes check or invalid, ignore and continue
+                        }
+                    }
+                }
+            }
+        }
+        return true; // no legal moves left because they would all result in a check
+    }
+
+
 
     // Return the total material point value of the designated player
     int Game::point_value(const bool& white) const {
