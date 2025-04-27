@@ -71,6 +71,12 @@ int main(int argc, char* argv[]) {
 		std::cout << "Next command: ";
 		std::cin >> choice;
 
+		if(!(std::cin >> choice))
+		{
+			break;
+
+		}
+
 		// Validate that the command is a single character
 		if (choice.length() != 1) {
 			std::cerr << "Action specifier must be a single character, but length(" <<
