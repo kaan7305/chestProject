@@ -91,9 +91,9 @@ namespace Chess
         pieceChar == 'Q' || pieceChar == 'q')
     {
         bool badShape =
-           ((pieceChar == 'R' || pieceChar == 'r') && !(dx == 0 || dy == 0))    ||  // not straight
-           ((pieceChar == 'B' || pieceChar == 'b') && !(adx == ady))            ||  // not diagonal
-           ((pieceChar == 'Q' || pieceChar == 'q') && !(dx == 0 || dy == 0 || adx == ady)); // neither
+           ((pieceChar == 'R' || pieceChar == 'r') && !(dx == 0 || dy == 0))    ||  
+           ((pieceChar == 'B' || pieceChar == 'b') && !(adx == ady))            || 
+           ((pieceChar == 'Q' || pieceChar == 'q') && !(dx == 0 || dy == 0 || adx == ady));
         if (badShape)
             throw Exception("illegal move shape");
 
@@ -235,48 +235,19 @@ namespace Chess
 		// then we have to get all the pieces from the given color
 		// we will sume all these by using a switch or if statemetn
 
-		std::vector<std::pair<Position, const Piece*>> 
-		pieces = board.piecesByColor(white);
-
 		int total = 0;
-		std::size_t size = 0;
-
-		while (size < pieces.size()) 
+		std::vector<std::pair<Position, const Piece*>> colorGroup = board.piecesByColor(white);
+	
+		for (std::vector<std::pair<Position, const Piece*>>::const_iterator it = colorGroup.begin(); it != colorGroup.end(); it++) 
 		{
-			const Piece* piece = pieces[size].second;
-			char symbol = piece->to_ascii();
-			char upperCase = toupper(symbol);
-			switch (upperCase) 
+			const Piece* p = it->second;
+			if (p != nullptr) 
 			{
-				case 'K':
-					total += 0;
-					break;
-				case 'Q':
-					total += 9;
-					break;
-				case 'R':
-					total += 5;
-					break;
-				case 'B':
-					total += 3;
-					break;
-				case 'N':
-					total += 3;
-					break;
-				case 'P':
-					total += 1;
-					break;
-				default:
-					break;
+				total += p->point_value(); 
 			}
-
-			size++;
-
 		}
-
 		return total;
-		
-    }
+	}
 
 
       std::istream& operator>> (std::istream& is, Game& game) {

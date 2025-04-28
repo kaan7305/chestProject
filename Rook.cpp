@@ -41,4 +41,7 @@ namespace Chess
 
     return true;
   }
+  int Rook::point_value() const {
+    return 5;
+  }
 }

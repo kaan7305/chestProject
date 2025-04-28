@@ -65,6 +65,8 @@ namespace Chess
     return false;
    
   }
+
+
   
 
   // Checks if the pawn's move from 'start' to 'end' is a legal capturing move
@@ -91,6 +93,9 @@ namespace Chess
     }
     
     return true;
+  }
+  int Pawn::point_value() const {
+    return 1;
   }
 }
 

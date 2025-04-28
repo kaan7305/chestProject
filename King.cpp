@@ -34,4 +34,8 @@ namespace Chess
     return false;
   }
 
+  int King::point_value() const {
+    return 0;
+  }
+
 }

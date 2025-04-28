@@ -50,4 +50,7 @@ namespace Chess
 
     return false;
   }
+  int Bishop::point_value() const {
+    return 3;
+}
 }

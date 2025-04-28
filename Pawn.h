@@ -11,6 +11,9 @@ namespace Chess
 		bool legal_move_shape(const Position& start, const Position& end) const override;
     
 		bool legal_capture_shape(const Position& start, const Position& end) const override;
+
+		int point_value() const override;
+
     
 		/////////////////////////////////////
 		// DO NOT MODIFY THIS FUNCTION!!!! //

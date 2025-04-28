@@ -13,7 +13,7 @@ namespace Chess
     int dx = end.first  - start.first;
     int dy = end.second - start.second;
 
-
+    // We are checkingg if the move is horizontal, vertical, or diagonal
     if (dx != 0 && dy != 0 && std::abs(dx) != std::abs(dy))
     {
       return false;
@@ -63,5 +63,9 @@ namespace Chess
       return target && (target->is_white() != this->is_white());
     }
     return true;
+  }
+
+  int Queen::point_value() const {
+    return 9;
   }
 }

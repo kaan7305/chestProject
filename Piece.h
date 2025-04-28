@@ -20,6 +20,8 @@ namespace Chess
 		// The destructor for Piece is declared virtual so derived classes can override it
 		virtual ~Piece(){}
 
+		virtual int point_value() const = 0;
+
 		// Returns information about the color of the piece.
 		bool is_white() const { return white; }
 

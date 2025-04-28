@@ -14,7 +14,7 @@ namespace Chess
 		// DO NOT MODIFY THIS FUNCTION!!!! //
 		/////////////////////////////////////
 		char to_ascii() const override { return is_white() ? 'R' : 'r';	}
-    
+	int point_value() const override;
     /////////////////////////////////////
 		// DO NOT MODIFY THIS FUNCTION!!!! //
 		/////////////////////////////////////
