@@ -27,6 +27,9 @@ int main(int argc, char* argv[]) {
 	// Display command options
 	show_commands();
 
+	// Display the board
+	game.display();
+	
 	// Keep playing until the game is over
 	bool game_over = false;
 
