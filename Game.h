@@ -57,6 +57,10 @@ namespace Chess
 		// Is it white's turn?
 		bool is_white_turn;
 
+		Game(const Game& other);
+
+		Game& operator=(const Game& other);
+
         // Writes the board out to a stream
         friend std::ostream& operator<< (std::ostream& os, const Game& game);
 

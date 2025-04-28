@@ -279,6 +279,17 @@ namespace Chess
 		return is;
 	}
 
+	Chess::Game::Game(const Game& other)
+    : board(other.board), is_white_turn(other.is_white_turn) {}
+
+	Chess::Game& Game::operator=(const Game& other) {
+		if (this != &other) {
+			board = other.board;
+			is_white_turn = other.is_white_turn;
+		}
+		return *this;
+	}
+
     /////////////////////////////////////
     // DO NOT MODIFY THIS FUNCTION!!!! //
     /////////////////////////////////////
