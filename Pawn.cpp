@@ -94,6 +94,8 @@ namespace Chess
     
     return true;
   }
+
+  // Number of points pawn is worth
   int Pawn::point_value() const {
     return 1;
   }

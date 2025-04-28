@@ -41,6 +41,8 @@ namespace Chess
 
     return true;
   }
+
+  // Number of points rook is worth
   int Rook::point_value() const {
     return 5;
   }
