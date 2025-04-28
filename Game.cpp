@@ -97,6 +97,7 @@ namespace Chess
 			*this = back;
 			throw Exception("move exposes check");
 		}
+	    }
 	}
 
 	/**
