@@ -69,16 +69,16 @@ namespace Chess
 		} else {
 			// Only check path if it's NOT a knight
 			char pieceChar = mover->to_ascii();
-			if (pieceChar != 'N' && pieceChar != 'n') { 
+			if (pieceChar != 'N' && pieceChar != 'n' &&
+				pieceChar != 'P' && pieceChar != 'p')
+			{
 				if (!mover->isPathClear(start, end))
 					throw Exception("path is not clear");
 			}
-
+			
 			if (!mover->legal_move_shape(start, end))
-			throw Exception("illegal move shape");
-
+				throw Exception("illegal move shape");
 		}
-	
 		Game back = *this;
 
 		board.move_piece(start,end);
