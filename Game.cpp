@@ -68,27 +68,43 @@ namespace Chess
 				throw Exception("illegal capture shape");
 		} else {
 
-			char pieceChar = mover->to_ascii();
 
-			if ((pieceChar == 'P' && start.second == '2' && end.second == '4') ||
-				(pieceChar == 'p' && start.second == '7' && end.second == '5'))
-			{
-				Position mid{ start.first,
-							  static_cast<char>((start.second + end.second) / 2) };
-				if (board.isOccupied(mid))
-					throw Exception("path is not clear");
-			}
-		
-			if (!mover->legal_move_shape(start, end))
-				throw Exception("illegal move shape");
-		
-			if (pieceChar == 'R' || pieceChar == 'r' ||
-				pieceChar == 'B' || pieceChar == 'b' ||
-				pieceChar == 'Q' || pieceChar == 'q')
-			{
-				if (!mover->isPathClear(start, end))
-					throw Exception("path is not clear");
-			}
+    char pieceChar = mover->to_ascii();
+
+
+    int dx = end.first  - start.first;
+    int dy = end.second - start.second;
+    int adx = dx < 0 ? -dx : dx;
+    int ady = dy < 0 ? -dy : dy;
+
+    if ((pieceChar == 'P' && start.second == '2' && end.second == '4') ||
+        (pieceChar == 'p' && start.second == '7' && end.second == '5'))
+    {
+        Position mid{ start.first,
+                      static_cast<char>((start.second + end.second) / 2) };
+        if (board.isOccupied(mid))
+            throw Exception("path is not clear");
+    }
+
+    if (pieceChar == 'R' || pieceChar == 'r' ||
+        pieceChar == 'B' || pieceChar == 'b' ||
+        pieceChar == 'Q' || pieceChar == 'q')
+    {
+        bool badShape =
+           ((pieceChar == 'R' || pieceChar == 'r') && !(dx == 0 || dy == 0))    ||  // not straight
+           ((pieceChar == 'B' || pieceChar == 'b') && !(adx == ady))            ||  // not diagonal
+           ((pieceChar == 'Q' || pieceChar == 'q') && !(dx == 0 || dy == 0 || adx == ady)); // neither
+        if (badShape)
+            throw Exception("illegal move shape");
+
+        if (!mover->isPathClear(start, end))
+            throw Exception("path is not clear");
+    }
+    else
+    {
+        if (!mover->legal_move_shape(start, end))
+            throw Exception("illegal move shape");
+    }
 		}
 		Game back = *this;
 
