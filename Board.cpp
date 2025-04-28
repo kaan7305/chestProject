@@ -292,14 +292,14 @@ namespace Chess
    * @param end The ending position.
    * @return True if the path is clear, false otherwise.
    */
-  bool Board::isPathClear(const Position& start, const Position& end) const {
+  bool Piece::isPathClear(const Position& start, const Position& end) const {
     int dx = (end.first  > start.first)  ? 1 :
              (end.first  < start.first)  ? -1 : 0;
     int dy = (end.second > start.second) ? 1 :
              (end.second < start.second) ? -1 : 0;
     Position cur{ char(start.first + dx), char(start.second + dy) };
     while (cur != end) {
-      if (isOccupied(cur)) return false;
+      if (board->isOccupied(cur)) return false;
       cur.first  += dx;
       cur.second += dy;
     }

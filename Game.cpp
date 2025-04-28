@@ -66,10 +66,13 @@ namespace Chess
 			if (!mover->legal_capture_shape(start,end))
 				throw Exception("illegal capture shape");
 		} else {
-			if (!mover->legal_move_shape(start,end))
-				throw Exception("illegal move shape");
-			if (!board.isPathClear(start,end))
+
+			if (!mover->isPathClear(start, end))
 				throw Exception("path is not clear");
+
+			if (!mover->legal_move_shape(start, end))
+				throw Exception("illegal move shape");
+
 		}
 	
 		Game back = *this;

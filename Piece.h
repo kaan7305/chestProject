@@ -63,6 +63,8 @@ namespace Chess
 		// the board around everywhere.
 		void setBoard(const Board* b) { board = b; }
 
+		bool isPathClear(const Position& start, const Position& end) const;
+
 
 	protected:
 		// When a piece is created, its color must be provided as an argument
