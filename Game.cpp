@@ -68,29 +68,28 @@ namespace Chess
 				throw Exception("illegal capture shape");
 		} else {
 
-    char pieceChar = mover->to_ascii();
-    if ((pieceChar == 'P' && start.second == '2' && end.second == '4')
-     || (pieceChar == 'p' && start.second == '7' && end.second == '5'))
-    {
+			char pieceChar = mover->to_ascii();
 
-        Position mid{ start.first,
-                      static_cast<char>((start.second + end.second) / 2) };
-        if (board.isOccupied(mid))
-            throw Exception("path is not clear");
-    }
-
-
-    if (pieceChar != 'N' && pieceChar != 'n'
-     && pieceChar != 'P' && pieceChar != 'p')
-    {
-        if (!mover->isPathClear(start, end))
-            throw Exception("path is not clear");
-    }
-
-    // Finally check move-shape
-    if (!mover->legal_move_shape(start, end))
-        throw Exception("illegal move shape");
-}
+			if ((pieceChar == 'P' && start.second == '2' && end.second == '4') ||
+				(pieceChar == 'p' && start.second == '7' && end.second == '5'))
+			{
+				Position mid{ start.first,
+							  static_cast<char>((start.second + end.second) / 2) };
+				if (board.isOccupied(mid))
+					throw Exception("path is not clear");
+			}
+		
+			if (!mover->legal_move_shape(start, end))
+				throw Exception("illegal move shape");
+		
+			if (pieceChar == 'R' || pieceChar == 'r' ||
+				pieceChar == 'B' || pieceChar == 'b' ||
+				pieceChar == 'Q' || pieceChar == 'q')
+			{
+				if (!mover->isPathClear(start, end))
+					throw Exception("path is not clear");
+			}
+		}
 		Game back = *this;
 
 		board.move_piece(start,end);
