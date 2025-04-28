@@ -66,12 +66,14 @@ namespace Chess
 			if (!mover->legal_capture_shape(start,end))
 				throw Exception("illegal capture shape");
 		} else {
-
-			if (!mover->isPathClear(start, end))
-				throw Exception("path is not clear");
+			// Only check path if it's NOT a knight
+			char pieceChar = mover->to_ascii();
+			if (pieceChar != 'N' && pieceChar != 'n') { 
+				if (!mover->isPathClear(start, end))
+					throw Exception("path is not clear");
 
 			if (!mover->legal_move_shape(start, end))
-				throw Exception("illegal move shape");
+			throw Exception("illegal move shape");
 
 		}
 	
