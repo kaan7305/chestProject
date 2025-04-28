@@ -24,12 +24,28 @@ namespace Chess
   
   // Deep‐copy constructor
   Board::Board(const Board& other) {
-    for (auto &kv : other.occ) {
-      char designator = kv.second->to_ascii();
-      Piece* newp = create_piece(designator);
-      newp->setBoard(this);
-      occ[kv.first] = newp;
+    std::map<Position, Piece*, PositionCompare> temp_occ;
+
+    try {
+        for (const auto& kv : other.occ) {
+            if (kv.second) {
+                char designator = kv.second->to_ascii();
+                Piece* new_piece = create_piece(designator);
+                new_piece->setBoard(this);
+                temp_occ[kv.first] = new_piece;
+            }
+        }
+    } catch (...) {
+        // If ANY exception happens, clean up manually
+        for (auto& kv : temp_occ) {
+            delete kv.second;
+        }
+        temp_occ.clear();
+        throw;  // rethrow original exception
     }
+
+    // No exception? Safe to swap
+    occ.swap(temp_occ);
   }
   
   // Assignment operator
@@ -264,14 +280,20 @@ namespace Chess
      * @param to The position to move the piece to.
      */
     void Board::move_piece(const Position& from, const Position& to) {
-      // grabs and removes the pointer at "from"
+      // gets the piece pointer from the original position
       Piece* p = occ[from];
-      occ.erase(from);
-  
-      // overwrites (captures if needed) at "to"
+      occ.erase(from); // and gets rid of it from previous spot
+
+      // Delete target if already occupied
+      auto it = occ.find(to);
+      if (it != occ.end()) {
+        delete it->second;
+        occ.erase(it);
+      }
+
+      // Move the piece to target destination
       occ[to] = p;
-  
-      // makes sure the piece knows its board
+      // update the piece's internal boarder pointer (defensive)
       p->setBoard(this);
     }  
 
