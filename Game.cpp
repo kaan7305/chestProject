@@ -106,7 +106,7 @@ namespace Chess
             throw Exception("illegal move shape");
     }
 		}
-		Game back = *this;
+		Game back = Game(*this);
 
 		board.move_piece(start,end);
 
