@@ -57,8 +57,10 @@ namespace Chess
 		// Is it white's turn?
 		bool is_white_turn;
 
+		// Game copy constructor
 		Game(const Game& other);
 
+		// Game assignment operator
 		Game& operator=(const Game& other);
 
         // Writes the board out to a stream
