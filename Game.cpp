@@ -6,9 +6,7 @@
 #include <utility>
 
 namespace Chess {
-/////////////////////////////////////
-// DO NOT MODIFY THIS FUNCTION!!!! //
-/////////////////////////////////////
+// Default constructor
 Game::Game() : is_white_turn(true) {
   // Add the pawns
   for (int i = 0; i < 8; i++) {
@@ -42,9 +40,6 @@ Game::Game() : is_white_turn(true) {
 }
 
 void Game::make_move(const Position &start, const Position &end) {
-  /////////////////////////
-  // [REPLACE THIS STUB] //
-  /////////////////////////
 
   // I am checking if the start and end positions are valid
   if (start.first < 'A' || start.first > 'H' || start.second < '1' ||
@@ -261,9 +256,6 @@ int Game::point_value(const bool &white) const {
 }
 
 std::istream &operator>>(std::istream &is, Game &game) {
-  /////////////////////////
-  // [REPLACE THIS STUB] //
-  /////////////////////////
   game.board = Board();
 
   std::string line;
@@ -310,9 +302,6 @@ Chess::Game &Game::operator=(const Game &other) {
   return *this;
 }
 
-/////////////////////////////////////
-// DO NOT MODIFY THIS FUNCTION!!!! //
-/////////////////////////////////////
 std::ostream &operator<<(std::ostream &os, const Game &game) {
   // Write the board out and then either the character 'w' or the character 'b',
   // depending on whose turn it is
