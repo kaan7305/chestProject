@@ -18,7 +18,7 @@ namespace Chess
     {
       return false;
     }
-      
+    // normalizing the dx and dy values to 1, -1 or 0
     if (dx > 0)
     {
         dx = 1;
@@ -45,26 +45,32 @@ namespace Chess
         dy = 0;
     }
 
+    // Start moving from the start position to the end position
     char x = start.first + dx;
     char y = start.second + dy;
     
     while (x != end.first || y != end.second) 
     {
+      // if any square in between is occupied then we will return false
       if (board->isOccupied(Position(x, y))){
         return false;
-      } 
+      }
+      // Move to the next square in the direction of the move 
       x += dx;
       y += dy;
     }
-  
+
+    // check the last square
     if (board->isOccupied(end)) 
     {
+      // if occupied by opponent then capturing is allowed
       const Piece* target = board->operator()(end);
       return target && (target->is_white() != this->is_white());
     }
+    // if the last square is not occupied then we will return true
     return true;
   }
-
+  
   int Queen::point_value() const {
     return 9;
   }
