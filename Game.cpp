@@ -46,37 +46,59 @@ namespace Chess
 		/////////////////////////
 		// [REPLACE THIS STUB] //
 		/////////////////////////
+
+		//I am checking if the start and end positions are valid
 		if (start.first < 'A' || start.first > 'H' ||
 			start.second < '1' || start.second > '8')
-			throw Exception("start position is not on board");
+			{
+				throw Exception("start position is not on board");
+			}
+		
 		if (end.first < 'A' || end.first > 'H' ||
 			end.second < '1' || end.second > '8')
-			throw Exception("end position is not on board");
-	
+			{
+				throw Exception("end position is not on board");
+			}
+			
+		// We are checking if the start and end positions are the same
 		const Piece* mover = board(start);
-		if (!mover) throw Exception("no piece at start position");
-	
-		if (mover->is_white() != is_white_turn)
-			throw Exception("piece color and turn do not match");
+		if (!mover) 
+		{
+			throw Exception("no piece at start position");
+		}
 
+
+		if (mover->is_white() != is_white_turn)
+		{
+			throw Exception("piece color and turn do not match");
+		}
+
+		// We are checking if the end position is occupied by a 
+		// piece of the same color
 		bool destOcc = board.isOccupied(end);
-		if (destOcc) {
+		if (destOcc) 
+		{
 			const Piece* victim = board(end);
-			if (victim->is_white() == mover->is_white())
+			if (victim->is_white() == mover->is_white()){
 				throw Exception("cannot capture own piece");
-			if (!mover->legal_capture_shape(start,end))
+			}
+				
+			if (!mover->legal_capture_shape(start,end)){
 				throw Exception("illegal capture shape");
-		} else {
+			}
+		} 
+		else 
+		{
 
 
     char pieceChar = mover->to_ascii();
 
-
+	// We are checking if the move is legal
     int dx = end.first  - start.first;
     int dy = end.second - start.second;
     int adx = dx < 0 ? -dx : dx;
     int ady = dy < 0 ? -dy : dy;
-
+	
     if ((pieceChar == 'P' && start.second == '2' && end.second == '4') ||
         (pieceChar == 'p' && start.second == '7' && end.second == '5'))
     {
@@ -86,6 +108,7 @@ namespace Chess
             throw Exception("path is not clear");
     }
 
+	// We check for illegal moves
     if (pieceChar == 'R' || pieceChar == 'r' ||
         pieceChar == 'B' || pieceChar == 'b' ||
         pieceChar == 'Q' || pieceChar == 'q')
