@@ -259,17 +259,16 @@ namespace Chess
 
 		// we will have the total value of each piece
 		// then we have to get all the pieces from the given color
-		// we will sume all these by using a switch or if statemetn
-
+		// we will sume all these by using a switch or if statement
 		int total = 0;
 		std::vector<std::pair<Position, const Piece*>> colorGroup = board.piecesByColor(white);
-	
+		// we will iterate through the color group to get the value of each piece
 		for (std::vector<std::pair<Position, const Piece*>>::const_iterator it = colorGroup.begin();
 			it != colorGroup.end(); it++) 
 		{
 			const Piece* p = it->second;
 			if (p != nullptr) 
-			{
+			{	// add the value of the piece to the total
 				total += p->point_value(); 
 			}
 		}
@@ -311,11 +310,16 @@ namespace Chess
 		return is;
 	}
 
+	// Game copy constructor
 	Chess::Game::Game(const Game& other)
+	// copies the board and is_white_turn from the other game
     : board(other.board), is_white_turn(other.is_white_turn) {}
 
+	// Game assignment operator
 	Chess::Game& Game::operator=(const Game& other) {
+		// Check for self-assignment
 		if (this != &other) {
+			// Copy the board and is_white_turn from the other game
 			board = other.board;
 			is_white_turn = other.is_white_turn;
 		}
