@@ -259,7 +259,7 @@ namespace Chess
 
 		// we will have the total value of each piece
 		// then we have to get all the pieces from the given color
-		// we will sume all these by using a switch or if statement
+		// we will sum all these by using a switch or if statement
 		int total = 0;
 		std::vector<std::pair<Position, const Piece*>> colorGroup = board.piecesByColor(white);
 		// we will iterate through the color group to get the value of each piece
