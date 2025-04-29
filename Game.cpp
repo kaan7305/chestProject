@@ -161,7 +161,6 @@ namespace Chess
 	}
 
 	// true is checkmate false is not checkmate
-	// Havent finished yet
 	bool Game::in_mate(const bool& white) const {	
 		if (!in_check(white)) {
 			return false;
@@ -170,8 +169,12 @@ namespace Chess
 		std::vector<std::pair<Position, const Piece*>> colorGroup = board.piecesByColor(white);
 		const Piece* p;
 		Position start;
-	
-		for (std::vector<std::pair<Position, const Piece*>>::const_iterator cit = colorGroup.begin(); cit != colorGroup.end(); ++cit) {
+		// run through all pieces of the color
+		// and check if there is a legal move for any of them
+		// if there is a legal move then it is not checkmate
+		// if there is no legal move then it is checkmate
+		for (std::vector<std::pair<Position, const Piece*>>::const_iterator cit = colorGroup.begin(); 
+			cit != colorGroup.end(); ++cit) {
 			p = cit->second;
 			start = cit->first;
 	
@@ -261,7 +264,8 @@ namespace Chess
 		int total = 0;
 		std::vector<std::pair<Position, const Piece*>> colorGroup = board.piecesByColor(white);
 	
-		for (std::vector<std::pair<Position, const Piece*>>::const_iterator it = colorGroup.begin(); it != colorGroup.end(); it++) 
+		for (std::vector<std::pair<Position, const Piece*>>::const_iterator it = colorGroup.begin();
+			it != colorGroup.end(); it++) 
 		{
 			const Piece* p = it->second;
 			if (p != nullptr) 
