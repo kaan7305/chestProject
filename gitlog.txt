@@ -1,0 +1,721 @@
+commit 0d3e73eb3cdd057573fa167af4e2dd246026acc5
+Merge: 0ccbcc5 c1c9b8c
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 21:48:54 2025 -0400
+
+    Merge branch 'master' of https://github.com/jhu-ip/2025-spring-final-dbasara1-keroltu1-jibekwe1
+
+commit 0ccbcc5b8d41226acc0a61438addc217ccd6c6e3
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 21:48:30 2025 -0400
+
+    Added additional comments to Queen
+
+commit c1c9b8cdb82d5f947686299c35b2f6d97d2af246
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Mon Apr 28 21:39:43 2025 -0400
+
+    Added bew comments
+
+commit f387e5a2871e0ed476ff986dba0eede38128ca89
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 21:36:09 2025 -0400
+
+    Fixed formating in Knight
+
+commit 12482648f34825010bf5036720280ab0c0b5716b
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 21:35:35 2025 -0400
+
+    Fixed indentation in Game
+
+commit c88979c346dad87a17a92fa1d2fa21f668c2b675
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 21:29:53 2025 -0400
+
+    Removed previous Make object files
+
+commit 4c37fdcce78ac0057be2a6e4688aa566265c8785
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 21:29:29 2025 -0400
+
+    Added comments to private function declarations
+
+commit a44c90d8fcc4f46faa7c712837c4a7186b2d1605
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 21:27:21 2025 -0400
+
+    Addded additional comments
+
+commit 2d41310f3004bb55c7dcb2fca0626cbdcfc3aec3
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 21:27:12 2025 -0400
+
+    fixed some errors in preexisting comments
+
+commit 7d65c65dded2751c056bfd26267d12a2b59f666b
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 21:17:37 2025 -0400
+
+    Added comments for Game operator>>
+
+commit 9e39089fcb0825ff4ff6cd568ed1885b7747fbd1
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 21:05:05 2025 -0400
+
+    Added comments to in_mate and fixed some long lines
+
+commit 8b91e3654f4a9cfcadf318fcb2b5668e17cf9ff5
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 20:59:54 2025 -0400
+
+    Added struct comment for PositionCompare struct
+
+commit 6bd023b799795786cb0b2a90e38d2f51d1d60f89
+Merge: ca4bb96 911a0fc
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Mon Apr 28 20:13:19 2025 -0400
+
+    Commit messageMerge branch 'master' of https://github.com/jhu-ip/2025-spring-final-dbasara1-keroltu1-jibekwe1
+
+commit ca4bb96338e6ad1b16d67fbfece0ea29ba84e67a
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Mon Apr 28 20:08:48 2025 -0400
+
+    Game.cpp fixing errors
+
+commit 911a0fc9c81b11e13fdcc1f64fa472ea771f5bc5
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Mon Apr 28 19:38:11 2025 -0400
+
+    Added comments
+
+commit 8de7ea8fb279f68877d0cccf9643820967d99972
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Mon Apr 28 16:03:37 2025 -0400
+
+    Fixed point error as well as most valgrind errors; still working on Mystery faulty exceptions
+
+commit 214b1d0b2198cf0e7c7151714f629da5aa7e3929
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 15:50:05 2025 -0400
+
+    Added Game copy and operator=
+
+commit 5a00b2e64b3d5072f1c7cdc441d6f3ec4c63da3f
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 28 15:49:28 2025 -0400
+
+    Added if statment in move_piece function to properly delete target piece at target destination
+
+commit ca2b715c5be93c6234eca5c5b9f073d90358aac4
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Mon Apr 28 14:40:34 2025 -0400
+
+    Virtual used
+
+commit ba040100bbe49aafa3914eb65d385c0f8ba30ced
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Mon Apr 28 09:36:51 2025 -0400
+
+    Fixed display issue caused by a previous commit
+
+commit ee7711817c33b2221e994ccc764accce7d87bfc4
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Mon Apr 28 09:21:58 2025 -0400
+
+    board was not being displayed at start
+
+commit b765e4b74a4917a47c4967e283120d52567f41e6
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Mon Apr 28 08:01:35 2025 -0400
+
+    Added comments to Pawn and Rook
+
+commit e19b4993649703d96d6847684da1de642dcdc3b3
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sun Apr 27 22:16:23 2025 -0400
+
+     Game.cpp
+
+commit 48695655b6984b9265e2a4c16c701b03344249d0
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sun Apr 27 22:11:28 2025 -0400
+
+    Game.cpp
+
+commit 691e0068b6fc60c45662196837891790a4b2413d
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sun Apr 27 21:49:35 2025 -0400
+
+    game.cpp
+
+commit 5dcbd2bf53674a5776523639d3fa9b286aedd08c
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sun Apr 27 21:42:04 2025 -0400
+
+    changed Game.cpp
+
+commit 599704a14587ab6f67aa505816464806ae56ac9d
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 27 21:28:52 2025 -0400
+
+    reverted back to previous
+
+commit 9474c05a4229a8de49a5fdc7877f3bac2e10bccb
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sun Apr 27 20:57:33 2025 -0400
+
+    Made changes Game.cpp
+
+commit 5f9aef606d4689c5750d306f0096b2cd7bd64077
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sun Apr 27 20:46:43 2025 -0400
+
+    exception fixing
+
+commit 8d7daee06d1122d65d9ed62d45932fe9a9647c2d
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 27 20:36:07 2025 -0400
+
+    zip file
+
+commit 152bb1c31b9eee1cebb65d2499ebc0186e427e3b
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 27 20:34:28 2025 -0400
+
+    fixed indentation
+
+commit f3380225df3a97a633de335a8b89c2003b17f454
+Author: Johnathan Njau <jibekwe1>
+Date:   Sun Apr 27 20:32:08 2025 -0400
+
+    Added missing bracket
+
+commit 6c482c6ebf25672dcfffdb61b37a1fcdffc4c0a8
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 27 20:26:50 2025 -0400
+
+    Fixed error codes i think
+
+commit 5fb2e95544688ab3ce109306a01faf0d63f8fb4e
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 27 20:26:29 2025 -0400
+
+    Fixed error codes i think
+
+commit 6163268c3ce29d37d928149d7c06d80c40917a1e
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 27 19:52:09 2025 -0400
+
+    Fixed error codes i think
+
+commit 1954b1cc99992dbaf25c750985bbbbf2b2c84c17
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 27 18:49:29 2025 -0400
+
+    Added promotion handling to make_move
+
+commit 821cc268f278662c5536563f2bccea4af4f0f4dc
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 27 18:17:53 2025 -0400
+
+    forgot to add new board function to board header file
+
+commit 0325ee619f73b9fb835caebffafc71616ac1f879
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 27 18:10:50 2025 -0400
+
+    Fixed exception print errors
+
+commit a8c77f9d4c99ac5600f4179f80474ea6249ff1b8
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sun Apr 27 18:10:11 2025 -0400
+
+    Corrected the errors for Queen.cpp
+
+commit 840e295eacbf6f6d39096cee1b3340693546d7e4
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sun Apr 27 17:22:50 2025 -0400
+
+    tried to fix main.cpp
+
+commit 9d3338927e83c64e761c9871f0aea4742f918293
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 27 17:00:11 2025 -0400
+
+    Fixed display format
+
+commit 89d387196a8fd4c0a7c68b69d3f59a3a570ba479
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sun Apr 27 16:32:41 2025 -0400
+
+    Fixed the errors with getline in main.cpp
+
+commit 2f48fea778cc97401d5e6b4cbac9c78da768ba83
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sun Apr 27 15:53:27 2025 -0400
+
+    Fixed infinite loop problem
+
+commit eb8221d7cd134a4680f5e6f7fba2fb9de1ce1032
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 27 14:34:28 2025 -0400
+
+    Fixed logic issues with bishop, checkmate, stalemate where the program would only print that they were in a checked position, not checkmate/stalemate
+
+commit a3c88160b34852b1ce8dcea0192b87426f912d1a
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sat Apr 26 23:12:39 2025 -0400
+
+    Fixed issue where it didn't change turn from white to black
+
+commit 8c6e966cd69c2de876ca0cc0b19ae292e96bca45
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sat Apr 26 23:02:19 2025 -0400
+
+    Fixed another seg fault within board (needed destructor, copy constructor, assingment operator
+
+commit a0631a6d077f1e4c00c7a146ba3402263b2cb5d7
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sat Apr 26 21:33:10 2025 -0400
+
+    fixed compiler warnings with unused variables
+
+commit 36375c2ea3fe84fa98c026eadaf21703eb714636
+Author: Johnathan Njau <jibekwe1>
+Date:   Sat Apr 26 21:25:40 2025 -0400
+
+    Added defensive measures in Bishop
+
+commit f98d483aa8e79e6c3e9ceb0dff1e2144abe2930c
+Author: Johnathan Njau <jibekwe1>
+Date:   Sat Apr 26 21:14:26 2025 -0400
+
+    Added an & to an exception in main to fix Makefile Warning
+
+commit 5943afca2f01c421fa9535bf7c29786eb1253433
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sat Apr 26 20:07:45 2025 -0400
+
+    Completed everything - Updated README
+
+commit 92961194415666383f798e192061e1f680af71a0
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sat Apr 26 15:39:19 2025 -0400
+
+    Completed Game.cpp
+
+commit 854a4d684ce65bb3ed16e18996499606838665c0
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sat Apr 26 14:58:49 2025 -0400
+
+    Did a plan for point_value
+
+commit 210cf932df4df7b156836e3500a4d2405558ca33
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sat Apr 26 14:35:16 2025 -0400
+
+     Corrected minor errors at Board.cpp
+
+commit 8cf6b1e7bbb2254a411755555211f25bcd1a4d4f
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Sat Apr 26 14:11:21 2025 -0400
+
+    in_mate completed
+
+commit 200d8138aa9c8dcc968f3961e6b9c9c53984d135
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Fri Apr 25 15:57:31 2025 -0400
+
+    Implemented Game.cpp
+
+commit b80f137d5eaf347dfe734998da07a1410c1f7f8a
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Fri Apr 25 15:50:57 2025 -0400
+
+    Updated README
+
+commit 9302604ff13a3f17bb7f9b07d5d0546f79874630
+Merge: 264392c 1e1606e
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Fri Apr 25 15:48:13 2025 -0400
+
+    Updated README
+
+commit 264392c5384ff8bcf1e0c814e5d5855f0a78a561
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Fri Apr 25 15:47:05 2025 -0400
+
+    Updated README
+
+commit 1e1606ee91e3f8a99bb0668bfe9df8594c732a6a
+Author: Johnathan Njau <jibekwe1>
+Date:   Fri Apr 25 15:35:58 2025 -0400
+
+    Added a space in illegal move catch message and deleted TODO Comments.
+
+commit 0db9de6b1f5351f192bae6ed4e45e6aee1eb9536
+Author: Johnathan Njau <jibekwe1>
+Date:   Fri Apr 25 15:05:01 2025 -0400
+
+    Updated task 17's status to completed
+
+commit 512dbae4628813e6812e870c366beea8d530389a
+Merge: 836cbb7 71c73c6
+Author: Johnathan Njau <jibekwe1>
+Date:   Fri Apr 25 14:59:28 2025 -0400
+
+    Merge branch 'master' of https://github.com/jhu-ip/2025-spring-final-dbasara1-keroltu1-jibekwe1
+
+commit 836cbb7eaca64f23f806a0653044655ea26a329a
+Author: Johnathan Njau <jibekwe1>
+Date:   Fri Apr 25 14:59:10 2025 -0400
+
+    Added try catch blocks in main for file i/o problems and for illegal moves.
+
+commit 71c73c60457e81fd05ea488b6085ef0bc42ac354
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Fri Apr 25 14:25:31 2025 -0400
+
+    Updated README
+
+commit 90d36f550bd6c328f04795b76c903204b7c57acb
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Fri Apr 25 14:24:37 2025 -0400
+
+    Wrote make move and added a helper function to Board to help write make move
+
+commit 9f02504c731afa606ea0002d61839e03eb2668fa
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Fri Apr 25 14:12:26 2025 -0400
+
+    Added math library header
+
+commit c493a46d8bf4ee4691991e89d94b59391019e257
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Fri Apr 25 01:07:11 2025 -0400
+
+    Started Game.cpp planning to finish it tomorrow
+
+commit 9191c1b817bb2d756bcff059f3fefbfda75f677e
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Fri Apr 25 00:54:23 2025 -0400
+
+     Completed Add Piece
+
+commit 951b62630312391cc33c288bf914d7883ae9be54
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Thu Apr 24 23:30:22 2025 -0400
+
+    Queen.cpp
+
+commit 559241c4b31f6837e0b3935922a0cf6e0cc016a4
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Thu Apr 24 23:26:05 2025 -0400
+
+    Edited Knight.cpp to do the isOccupied
+
+commit 0025e3c916c9e81886e1a6e6affa0191ff909879
+Merge: 17b6d91 55f54ef
+Author: Johnathan Njau <jibekwe1>
+Date:   Wed Apr 23 22:22:05 2025 -0400
+
+    Merge branch 'master' of https://github.com/jhu-ip/2025-spring-final-dbasara1-keroltu1-jibekwe1
+
+commit 17b6d913b636b44f0974036c8d22fc0b111f6328
+Author: Johnathan Njau <jibekwe1>
+Date:   Wed Apr 23 22:20:54 2025 -0400
+
+    Implemented in_check and in_stalemate
+
+commit 1e2417e70e5b25dd25ff22c066b6a0bdaba4ca9d
+Author: Johnathan Njau <jibekwe1>
+Date:   Wed Apr 23 22:20:33 2025 -0400
+
+    Added two helper functions to board. checkChecker checks if the player is in check, and piecesByColor returns a vector of pieces in the same color
+
+commit 924ce55bbbffa577bb4305e30cecd8dc6838fc2a
+Author: Johnathan Njau <jibekwe1>
+Date:   Wed Apr 23 22:12:55 2025 -0400
+
+    Updated my task status
+
+commit 55f54efe56201c51f22b4ba07e4ac9e7ab09f35f
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Wed Apr 23 20:32:39 2025 -0400
+
+    Edited Pawn and Rook to use isOccupied method in Board
+
+commit d8e51984a57e4af5b6f5c990ea59c21db061cc77
+Author: Johnathan Njau <jibekwe1>
+Date:   Wed Apr 23 18:53:46 2025 -0400
+
+    Updated my Task Statuses
+
+commit eb4702117f3a699286660fba9e507f0fead6380f
+Author: Johnathan Njau <jibekwe1>
+Date:   Wed Apr 23 18:50:49 2025 -0400
+
+    Added checkChecker function in Board .h file
+
+commit 0ee039283812e247a0b81e50498136d50506cce8
+Author: Johnathan Njau <jibekwe1>
+Date:   Wed Apr 23 15:47:47 2025 -0400
+
+    Deleted duplicate line in README
+
+commit e11c1aafe934d2ef7d8412820ccd1244970f099e
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Wed Apr 23 15:14:21 2025 -0400
+
+    README Updated
+
+commit 3329061b71c432a1e2a23774ca970c716de8d7f6
+Merge: 5678dd8 1e1b1dc
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Wed Apr 23 15:12:17 2025 -0400
+
+    Merge branch 'master' of https://github.com/jhu-ip/2025-spring-final-dbasara1-keroltu1-jibekwe1
+
+commit 5678dd81fd5f76a2c5d99f81b294e13e53caa2a7
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Wed Apr 23 15:10:10 2025 -0400
+
+    Merging
+
+commit 1e1b1dc1f6e8f77f9445457df470319726c38186
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Wed Apr 23 14:40:08 2025 -0400
+
+    wrote board display function and updated readme. still needs to be tested
+
+commit 253b85e8641143d6329f3d626710da4f1125b4b6
+Merge: 884f0e8 35e440f
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Wed Apr 23 10:13:14 2025 -0400
+
+    fixed formatting w readme that got messed up when merging
+
+commit 884f0e88e7d68284704d2f11e4ead2d37a04652f
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Wed Apr 23 10:12:38 2025 -0400
+
+    fixed formatting w readme that got messed up when merging
+
+commit 35e440faf7bbaf097b324e06ad577f758f6a7c16
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Wed Apr 23 09:59:17 2025 -0400
+
+    Queen added and completed
+
+commit 2b79d765928e7e2787177651d5bee0e4cb18bd38
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Wed Apr 23 01:39:30 2025 -0400
+
+    Knight finished
+
+commit 338ed5c7aee3d6bebbde1670bffbe33dbd1cbb94
+Merge: c68c736 85d3196
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Tue Apr 22 22:30:08 2025 -0400
+
+    Merged README
+
+commit c68c7369edb95792154d6f6cdd42bab8536e8756
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Tue Apr 22 22:28:22 2025 -0400
+
+    Updated README
+
+commit 85d3196a953320e246849d832f35c7d99486772e
+Author: Johnathan Njau <jibekwe1>
+Date:   Tue Apr 22 12:52:06 2025 -0400
+
+    Added doc comment to in_check and removed "REPLACE THIS STUB" comment
+
+commit bd5f28aa3c5d045ecd67692e6317abbbe9e1e4db
+Author: Johnathan Njau <jibekwe1>
+Date:   Tue Apr 22 12:51:25 2025 -0400
+
+    Added a space between the REPLACE THIS STUB comment and my personal comment talking about the code I wrote in Board::add_piece
+
+commit 18b2c81eefbd31105e4a75f19755f5afa164de46
+Author: Johnathan Njau <jibekwe1>
+Date:   Tue Apr 22 12:50:47 2025 -0400
+
+    Updated my README Task statuses.
+
+commit ae33980f99ea9a72a5a6f6b3516bb5b2c4662e46
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 22:40:23 2025 -0400
+
+    Added doc comments to the helper function I made: isOccupied
+
+commit 9f8d2b43588b7d16ba62e6b14d62715bb5adb5e0
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 22:38:34 2025 -0400
+
+    Added doc comment for operator()
+
+commit 15fc0559b783edba25ae476ed046900500b29ac9
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 22:38:17 2025 -0400
+
+    Implemented Board's operator() and it's doc comment. Also added a comment in add_piece regarding code I added in it.
+
+commit 40b87af2c869cd398d1f535103b2a7f87f796d97
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 22:10:02 2025 -0400
+
+    Cleaned up the legal move function and fixed some boolean logic
+
+commit cf9a11daef7cd13a48d8e75b6aff0138d0d050e9
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 22:08:04 2025 -0400
+
+    Fixed king's logic so it won't be able to move if teammate piece is in desired spot
+
+commit bb03ee62ee3d041ab780a20158184c37977a517b
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 22:06:46 2025 -0400
+
+    Added doc comments for king's function
+
+commit a42cde2af723e3cb0d395fce7621fdea8427637b
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 22:05:19 2025 -0400
+
+    Initalized the legal_move_shape function for king
+
+commit f358687d18acc66b2e5e366edea61fe269086225
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 20:59:56 2025 -0400
+
+    There was an indentation error in the starter file I fixed.
+
+commit a93e2646b6ccb7646937a71aa667c50c021b162a
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 18:41:03 2025 -0400
+
+    Added doc comments
+
+commit 47c22b1e1f953d134ba825916b54b6e288ad88a1
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 18:38:09 2025 -0400
+
+    Added comment to isOccupied Function
+
+commit a539d59b0738bf118fe47c1ee9927abbbb40a2c5
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 18:36:23 2025 -0400
+
+    Added setBoard function so each piece has a pointer to the board to make movement checks easier
+
+commit 229578cb2147604475652e62a80467471afba5ff
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 18:35:34 2025 -0400
+
+    Removed isOccupiedByEnemy function since it'd be easier to check in each individual piece class
+
+commit 48ef138291d5af7762c164ab6379f9d413642e9d
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 18:34:33 2025 -0400
+
+    Added a call to piece's setBoard function to  give that piece object a pointer to the board its on to make movement checks easier
+
+commit f2fe0b5be9c97004b7f11012adde3887c334a374
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 18:33:12 2025 -0400
+
+    Implemented legal_move_shape function
+
+commit 91311115ba2c027dfddab69a33b11280ad07a593
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 15:30:48 2025 -0400
+
+    Added the function declaration for isOccupied and occupiedByEnemy (not implemented yet)
+
+commit 9565430108b27521e5051cfb0f52e030528ec53a
+Author: Johnathan Njau <jibekwe1>
+Date:   Mon Apr 21 15:30:06 2025 -0400
+
+    Added isOccupied function which checks if piece is at the given position argument
+
+commit abb6524fb6c55a2fb90c84e3c0bf7605699a3dad
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Mon Apr 21 15:28:02 2025 -0400
+
+    Updated README
+
+commit 3fed9320b9468294c46978754dfb201c6aade727
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Mon Apr 21 15:20:04 2025 -0400
+
+    Implemented Pawn
+
+commit 3af6b492c0eee5782a6b2a20458541496fc8d85d
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 20 22:09:14 2025 -0400
+
+    Updated README owners
+
+commit 6ec4cce8f72a548f2e24162f2fc09d5b301aa52f
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 20 19:22:00 2025 -0400
+
+    Edited and finalized README
+
+commit 27bf6cb8b4fc355d4475c27b206ef47db10bf241
+Author: Desen Basaran <dbasara1@jh.edu>
+Date:   Sun Apr 20 18:14:57 2025 -0400
+
+    directory was missing knight.cpp and knight.h
+
+commit 9327aebfbbf47b0080adf4498ab9745d576f4308
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Fri Apr 18 23:53:14 2025 -0400
+
+    Dependencies
+
+commit 031ecf5c89815113d86af8a6f1f349a0e135189c
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Fri Apr 18 23:47:41 2025 -0400
+
+    Owners assigned
+
+commit bfab1e5a4b15994dbb1d19e6d2856cac76944300
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Fri Apr 18 23:45:05 2025 -0400
+
+    Due Dates assigned
+
+commit 4c3287789fd86ff4b9e5139dd8a321b0b801f694
+Author: Kaan <kaaneroltu73@gmail.com>
+Date:   Fri Apr 18 23:42:08 2025 -0400
+
+    README Difficulties
+
+commit 3fcdd9824b07d41ad164eace941072059c6e1826
+Author: Johnathan Njau <jibekwe1>
+Date:   Wed Apr 16 16:31:43 2025 -0400
+
+    Made all difficulties 0 to represent which difficulties must be updated
+
+commit 65a192df25f1c486e2719e62d57e99dc6e16ee1d
+Author: Johnathan Njau <jibekwe1>
+Date:   Wed Apr 16 16:30:35 2025 -0400
+
+    Updated Task names, and project overview. Leaving only owners, difficulty, and due dates to be updated
+
+commit 0db640a747e6aba1b44f380f60d95d8914c32e1c
+Author: Johnathan Njau <jibekwe1>
+Date:   Wed Apr 16 15:09:00 2025 -0400
+
+    Created README File
+
+commit 345dc4207fe2ffa938d15c822696baa296a51e5e
+Author: Johnathan Njau <jibekwe1>
+Date:   Wed Apr 16 14:02:59 2025 -0400
+
+    Copied all project files from main repository
