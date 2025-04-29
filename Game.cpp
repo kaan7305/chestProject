@@ -284,6 +284,7 @@ namespace Chess
 		game.board = Board();
 
 		std::string line;
+		// Read the input board
 		for (int rank = 8; rank >= 1; rank--) {
 			if (!std::getline(is, line) || line.size() < 8) {
 				throw Exception("invalid file format");
@@ -291,17 +292,21 @@ namespace Chess
 
 			for (int file = 0; file < 8; file++) {
 				char piece_char = line[file];
+				// if the piece is not a placeholder
 				if (piece_char != '-') {
+					// Adds piece to the board based on file and rank
 					Position pos (char ('A' + file), char ('0' + rank));
 					game.board.add_piece(pos, piece_char);
 				}
 			}
 		}
-
+		// Read the turn character
 		char turn_char;
 		if (!(is >> turn_char) || (turn_char != 'w' && turn_char != 'b')) {
 			throw Exception("invalid file format");
 		}
+		// Set the turn based on the character
+		// 'w' for white and 'b' for black
 		game.is_white_turn = (turn_char == 'w');
 		return is;
 	}
