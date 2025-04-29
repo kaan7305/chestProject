@@ -91,6 +91,8 @@ void Game::make_move(const Position &start, const Position &end) {
 
     if ((pieceChar == 'P' && start.second == '2' && end.second == '4') ||
         (pieceChar == 'p' && start.second == '7' && end.second == '5')) {
+	  // Static char helps us to convert the expression int to char
+	  // so the result of the expression instead of int becomes char.
       Position mid{start.first,
                    static_cast<char>((start.second + end.second) / 2)};
       if (board.isOccupied(mid))
