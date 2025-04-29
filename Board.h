@@ -13,6 +13,7 @@
 #include "King.h"
 #include "Mystery.h"
 
+// Compares the two Positions
 struct PositionCompare {
     bool operator()(const Chess::Position& a, const Chess::Position& b) const {
         if (a.second == b.second) return a.first < b.first;
