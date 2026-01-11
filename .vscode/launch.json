@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/kaaneroltu/Desktop/2025-spring-final-dbasara1-keroltu1-jibekwe1",
+      "program": "/Users/kaaneroltu/Desktop/2025-spring-final-dbasara1-keroltu1-jibekwe1/build/Debug/outDebug"
+    }
+  ]
+}

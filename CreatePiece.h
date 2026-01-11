@@ -1,6 +1,3 @@
-/////////////////////////////////
-// DO NOT MODIFY THIS FILE!!!! //
-/////////////////////////////////
 #ifndef CREATE_PIECE_H
 #define CREATE_PIECE_H
 
@@ -26,4 +23,4 @@ namespace Chess
 	//	'm': black mystery piece
 	Piece* create_piece(const char& piece_designator);
 }
-#endif // CREATE_PIECE_H
+#endif

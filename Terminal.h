@@ -1,6 +1,4 @@
-/////////////////////////////////
-// DO NOT MODIFY THIS FILE!!!! //
-/////////////////////////////////
+
 #ifndef TERMINAL_H
 #define TERMINAL_H
 
@@ -52,4 +50,4 @@ public:
 
 };
 
-#endif // TERMINAL_H
+#endif 

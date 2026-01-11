@@ -19,4 +19,4 @@ namespace Chess
 		const char *what( void ) const noexcept { return _message.c_str(); }
 	};
 }
-#endif // EXCEPTIONS_H
+#endif 

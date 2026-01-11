@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game Visualizations</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #2d2d2d;
+            color: #f0f0f0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #81C784;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        .board-container {
+            background-color: #1e1e1e;
+            border: 3px solid #4CAF50;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .board {
+            font-size: 24px;
+            line-height: 1.4;
+            white-space: pre;
+            background-color: #0d0d0d;
+            padding: 20px;
+            border-radius: 5px;
+            color: #f0f0f0;
+            overflow-x: auto;
+        }
+
+        .status {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #263238;
+            border-left: 4px solid #4CAF50;
+            border-radius: 4px;
+        }
+
+        .status.check {
+            border-left-color: #FFC107;
+            background-color: #332900;
+        }
+
+        .status.checkmate {
+            border-left-color: #F44336;
+            background-color: #330000;
+        }
+
+        .info {
+            color: #B0BEC5;
+            margin: 5px 0;
+        }
+
+        .turn {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .warning {
+            font-weight: bold;
+            color: #FFC107;
+        }
+
+        .game-over {
+            font-weight: bold;
+            color: #F44336;
+            font-size: 1.2em;
+        }
+
+        .description {
+            background-color: #263238;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            color: #B0BEC5;
+        }
+
+        .legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .legend-item {
+            background-color: #263238;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #4CAF50;
+        }
+
+        .piece-symbol {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        code {
+            background-color: #0d0d0d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>♔ Chess Game - Visualizations ♔</h1>
+        <p style="text-align: center; color: #B0BEC5;">Interactive C++ Chess Game </p>
+
+        <div class="description">
+            <h3 style="color: #81C784; margin-top: 0;">About This Project</h3>
+            <p>This is a fully-featured command-line chess game implemented in C++ with:</p>
+            <ul>
+                <li>Complete chess rule implementation</li>
+                <li>Check, checkmate, and stalemate detection</li>
+                <li>Game save/load functionality</li>
+                <li>Material point value tracking</li>
+            </ul>
+        </div>
+
+        <h2>Piece Legend</h2>
+        <div class="legend">
+            <div class="legend-item">
+                <span class="piece-symbol">♔ / ♚</span>
+                <strong>King</strong><br>
+                <small>Moves one square in any direction</small>
+            </div>
+            <div class="legend-item">
+                <span class="piece-symbol">♕ / ♛</span>
+                <strong>Queen</strong><br>
+                <small>Moves any distance horizontally, vertically, or diagonally</small>
+            </div>
+            <div class="legend-item">
+                <span class="piece-symbol">♖ / ♜</span>
+                <strong>Rook</strong><br>
+                <small>Moves any distance horizontally or vertically</small>
+            </div>
+            <div class="legend-item">
+                <span class="piece-symbol">♗ / ♝</span>
+                <strong>Bishop</strong><br>
+                <small>Moves any distance diagonally</small>
+            </div>
+            <div class="legend-item">
+                <span class="piece-symbol">♘ / ♞</span>
+                <strong>Knight</strong><br>
+                <small>Moves in an L-shape: 2+1 squares</small>
+            </div>
+            <div class="legend-item">
+                <span class="piece-symbol">♙ / ♟</span>
+                <strong>Pawn</strong><br>
+                <small>Moves forward, captures diagonally</small>
+            </div>
+        </div>
+
+        <h2>1. Initial Board Position</h2>
+        <div class="board-container">
+            <div class="description">
+                This is the starting position of a chess game. All pieces are in their traditional opening positions.
+                White (bottom, outline pieces) moves first.
+            </div>
+            <div class="board">  ABCDEFGH
+  --------
+8|♜♞♝♛♚♝♞♜|8
+7|♟♟♟♟♟♟♟♟|7
+6| · · · · |6
+5|· · · · ·|5
+4| · · · · |4
+3|· · · · ·|3
+2|♙♙♙♙♙♙♙♙|2
+1|♖♘♗♕♔♗♘♖|1
+  --------
+  ABCDEFGH</div>
+            <div class="status">
+                <div class="info"><span class="turn">White's move.</span></div>
+                <div class="info">Material point value: <strong>39</strong></div>
+            </div>
+        </div>
+
+        <h2>2. Opening Position - Italian Game</h2>
+        <div class="board-container">
+            <div class="description">
+                After the moves: <code>E2-E4</code>, <code>E7-E5</code>, <code>G1-F3</code>, <code>B8-C6</code>, <code>F1-C4</code><br>
+                This is a classical Italian Game opening, one of the oldest recorded chess openings.
+                White has developed the bishop to C4, putting pressure on Black's weak f7 square.
+            </div>
+            <div class="board">  ABCDEFGH
+  --------
+8|♜ ♝♛♚♝♞♜|8
+7|♟♟♟♟ ♟♟♟|7
+6| ·♞· · · |6
+5|· · · ♟· ·|5
+4| ·♗· ♙ · |4
+3|· · · · ♘·|3
+2|♙♙♙♙ ♙♙♙|2
+1|♖♘♗♕♔ ·♖|1
+  --------
+  ABCDEFGH</div>
+            <div class="status">
+                <div class="info"><span class="turn">Black's move.</span></div>
+                <div class="info">Material point value: <strong>39</strong></div>
+                <div class="info" style="color: #B0BEC5; margin-top: 10px;">
+                    Both players have equal material. White has good piece development and central control.
+                </div>
+            </div>
+        </div>
+
+        <h2>3. Check Position</h2>
+        <div class="board-container">
+            <div class="description">
+                <strong>Black is in check!</strong><br>
+                White's queen on F7 is attacking Black's king on E8. Black must respond by:
+                <ul>
+                    <li>Moving the king to a safe square</li>
+                    <li>Blocking the attack with another piece</li>
+                    <li>Capturing the attacking queen</li>
+                </ul>
+            </div>
+            <div class="board">  ABCDEFGH
+  --------
+8|♜♞♝♛♚♝ ♜|8
+7|♟♟♟♟ ♕♟♟|7
+6| · · · · |6
+5|·♗· ·♟· ·|5
+4| · · ♞ · |4
+3|· · · · ·|3
+2|♙♙♙♙ ♙♙♙|2
+1|♖♘♗ ♔ ♘♖|1
+  --------
+  ABCDEFGH</div>
+            <div class="status check">
+                <div class="info"><span class="turn">Black's move.</span></div>
+                <div class="info">Material point value: <strong>38</strong></div>
+                <div class="warning">⚠ You are in check!</div>
+            </div>
+        </div>
+
+        <h2>4. Checkmate Position</h2>
+        <div class="board-container">
+            <div class="description">
+                <strong>Checkmate - Game Over!</strong><br>
+                Black's king is in check from White's queen on F7, and has no legal moves to escape:
+                <ul>
+                    <li>King cannot move to any adjacent square (all controlled by White's pieces)</li>
+                    <li>No piece can block the attack</li>
+                    <li>The attacking queen cannot be captured</li>
+                </ul>
+                This is a classic Scholar's Mate pattern.
+            </div>
+            <div class="board">  ABCDEFGH
+  --------
+8|♜♞♝♛♚♝ ♜|8
+7|♟♟♟♟ ♕♟♟|7
+6| · · · · |6
+5|· · · ♟· ·|5
+4| ·♗· ♞ · |4
+3|· · · · ·|3
+2|♙♙♙♙ ♙♙♙|2
+1|♖♘♗ ♔ ♘♖|1
+  --------
+  ABCDEFGH</div>
+            <div class="status checkmate">
+                <div class="info"><span class="turn">Black's move.</span></div>
+                <div class="info">Material point value: <strong>38</strong></div>
+                <div class="game-over">⚔ Checkmate! Game over. ⚔</div>
+                <div class="info" style="color: #B0BEC5; margin-top: 10px;">
+                    White wins! The game demonstrates the importance of protecting the f7 square in the opening.
+                </div>
+            </div>
+        </div>
+
+        <h2>How to Use</h2>
+        <div class="description">
+            <h3 style="color: #81C784;">Compilation</h3>
+            <pre style="background-color: #0d0d0d; padding: 15px; border-radius: 5px; overflow-x: auto;"><code>make</code></pre>
+
+            <h3 style="color: #81C784; margin-top: 20px;">Running the Game</h3>
+            <pre style="background-color: #0d0d0d; padding: 15px; border-radius: 5px; overflow-x: auto;"><code>./chess</code></pre>
+
+            <h3 style="color: #81C784; margin-top: 20px;">Commands</h3>
+            <ul>
+                <li><code>M &lt;move&gt;</code> - Make a move (e.g., <code>M E2E4</code>)</li>
+                <li><code>L &lt;filename&gt;</code> - Load a saved game</li>
+                <li><code>S &lt;filename&gt;</code> - Save the current game</li>
+                <li><code>?</code> - Show help menu</li>
+                <li><code>Q</code> - Quit the game</li>
+            </ul>
+
+            <h3 style="color: #81C784; margin-top: 20px;">Move Format</h3>
+            <p>Moves are specified as 4 characters:</p>
+            <ul>
+                <li>First 2 characters: Starting position (column A-H, row 1-8)</li>
+                <li>Last 2 characters: Ending position (column A-H, row 1-8)</li>
+            </ul>
+            <p>Example: <code>M E2E4</code> moves the piece from E2 to E4</p>
+        </div>
+
+        <h2>Features</h2>
+        <div class="legend">
+            <div class="legend-item">
+                <strong>✓</strong> Complete Chess Rules
+            </div>
+            <div class="legend-item">
+                <strong>✓</strong> Check Detection
+            </div>
+            <div class="legend-item">
+                <strong>✓</strong> Checkmate Detection
+            </div>
+            <div class="legend-item">
+                <strong>✓</strong> Stalemate Detection
+            </div>
+            <div class="legend-item">
+                <strong>✓</strong> Save/Load Games
+            </div>
+            <div class="legend-item">
+                <strong>✓</strong> Material Tracking
+            </div>
+            <div class="legend-item">
+                <strong>✓</strong> Unicode Display
+            </div>
+            <div class="legend-item">
+                <strong>✓</strong> Move Validation
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; padding: 20px; background-color: #1e1e1e; border-radius: 10px; text-align: center;">
+            <h3 style="color: #4CAF50;">Ready to Play?</h3>
+            <p style="color: #B0BEC5;">Compile the code with <code>make</code> and start playing with <code>./chess</code></p>
+            <p style="color: #B0BEC5;">For more details, check out <strong>README.md</strong> and <strong>QUICKSTART.md</strong></p>
+        </div>
+
+        <div style="margin-top: 30px; text-align: center; color: #666; padding: 20px;">
+            <p>C++ Chess Game - Educational Project</p>
+            <p style="font-size: 2em;">♔ ♕ ♖ ♗ ♘ ♙</p>
+        </div>
+    </div>
+</body>
+</html>

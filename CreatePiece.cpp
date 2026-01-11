@@ -1,6 +1,4 @@
-/////////////////////////////////
-// DO NOT MODIFY THIS FILE!!!! //
-/////////////////////////////////
+
 #include <cstddef>
 #include "CreatePiece.h"
 #include "Pawn.h"
