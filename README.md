@@ -2,7 +2,7 @@
 
 A fully-featured command-line chess game implemented in C++ with support for standard chess rules, move validation, check/checkmate detection, game saving/loading, and beautiful Unicode piece rendering.
 
-## 🎮 Quick Preview
+## Quick Preview
 
 ```
   ABCDEFGH
@@ -48,11 +48,11 @@ The game outputs beautiful Unicode chess boards directly in the terminal. All ex
 
 ### Interactive HTML Visualization
 Open `visualizations.html` in your browser for a rich, interactive experience featuring:
-- 🎨 Beautiful dark-themed design
-- 🎯 Multiple game scenarios (initial position, check, checkmate)
-- 📖 Piece legend with move descriptions
-- 🎮 Interactive how-to-use guide
-- ✨ Color-coded status indicators
+- Beautiful dark-themed design
+- Multiple game scenarios (initial position, check, checkmate)
+- Piece legend with move descriptions
+- Interactive how-to-use guide
+- Color-coded status indicators
 
 **To view**: Simply double-click `visualizations.html` or run:
 ```bash
